@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        app:tabBackground="@null"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabIndicatorHeight="1dp"
+        app:tabSelectedTextColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_above="@id/tab_layout"
+        android:id="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/tabLine"
+        />
+
+    <com.ningcui.mylibrary.viewLib.sample.AbViewPager
+
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tab_line"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+
+    </com.ningcui.mylibrary.viewLib.sample.AbViewPager>
+
+
+
+
+</RelativeLayout>
