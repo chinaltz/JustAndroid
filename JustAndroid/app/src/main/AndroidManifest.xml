@@ -18,6 +18,7 @@
 
         <activity android:name=".main.LanuchActivity">
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,7 +28,10 @@
         <activity
             android:name=".main.activity.MainActivity"
 
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleTask"></activity>
+
+
+        <activity android:name=".activity.UiDialogActivity"></activity>
     </application>
 
 </manifest>

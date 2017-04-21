@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 
 /**
@@ -23,11 +25,12 @@ public class AbProgressDialogFragment extends DialogFragment {
 	 * @param message  消息提示
      * @return
      */
-	public static AbProgressDialogFragment newInstance(int indeterminateDrawable, String message) {
+	public static AbProgressDialogFragment newInstance(int indeterminateDrawable, String message, boolean isCancelable) {
 		AbProgressDialogFragment f = new AbProgressDialogFragment();
 		Bundle args = new Bundle();
 		args.putInt("indeterminateDrawable", indeterminateDrawable);
 		args.putString("message", message);
+        args.putBoolean("isCancelable", isCancelable);
 		f.setArguments(args);
 
 		return f;
@@ -39,7 +42,7 @@ public class AbProgressDialogFragment extends DialogFragment {
 		super.onCreate(savedInstanceState);
 		int indeterminateDrawable = getArguments().getInt("indeterminateDrawable");
 		String message = getArguments().getString("message");
-		
+		boolean isCancelable=getArguments().getBoolean("isCancelable");
 		ProgressDialog progressDialog = new ProgressDialog(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
 		if(indeterminateDrawable > 0){
 			progressDialog.setIndeterminateDrawable(getActivity().getResources().getDrawable(indeterminateDrawable));
@@ -48,7 +51,28 @@ public class AbProgressDialogFragment extends DialogFragment {
 		if(message != null){
 			progressDialog.setMessage(message);
 		}
-		
+
+
+
+		progressDialog.setCanceledOnTouchOutside(false);
+
+        if (!isCancelable){
+            progressDialog.setCancelable(false);
+            progressDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+                @Override
+                public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+
+                    if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+
+                        return true;
+                    }
+                    return false;
+                }
+            });
+
+        }
+
 	    return progressDialog;
 	}
 	

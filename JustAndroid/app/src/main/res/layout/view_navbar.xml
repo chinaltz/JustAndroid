@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--头部导航布局-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,5 +41,42 @@
         style="@style/Nav_TitleView"
 
         android:text="标题" />
+
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/nav_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="34px"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:background="@color/black"
+            android:id="@+id/nav_right_icon"
+            android:visibility="gone"
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_gravity="center|left"
+            android:scaleType="fitXY"
+            android:src="@mipmap/nav_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:gravity="center|left"
+            android:paddingLeft="10px"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="32px" />
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>
 

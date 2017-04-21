@@ -1,17 +1,26 @@
 package com.litingzhe.justandroid.main.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.activity.UiDialogActivity;
+import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
+import com.litingzhe.justandroid.main.model.SampleModel;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,8 +42,14 @@ public class HomeBaseUIFragment extends AbBaseFragment {
     @BindView(R.id.nav_title)
     TextView navTitle;
     Unbinder unbinder;
+    @BindView(R.id.uiListView)
+    ListView uiListView;
+    Unbinder unbinder1;
     private Context mContext;
     private View rootView;
+    private List uiSampleList;
+
+    private SampleListAdapter sampleListAdapter;
 
     @Nullable
     @Override
@@ -44,19 +59,70 @@ public class HomeBaseUIFragment extends AbBaseFragment {
         if (rootView == null) {
 
             rootView = inflater.inflate(R.layout.fragment_ui, null);
-            unbinder = ButterKnife.bind(this, rootView);
-            NavBack.setVisibility(View.GONE);
-            navTitle.setText("常见UI");
-        }
 
+            initDataAndView();
+        }
 
 
         AutoUtils.auto(rootView);
 
 
+        unbinder1 = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
+
+    private void initDataAndView() {
+        unbinder = ButterKnife.bind(this, rootView);
+        NavBack.setVisibility(View.GONE);
+        navTitle.setText("常见UI");
+        uiSampleList = new ArrayList();
+
+        SampleModel sampleModel1 = new SampleModel("常用对话框", R.mipmap.dialogicon);
+        SampleModel sampleModel2 = new SampleModel("下拉刷新", R.mipmap.ui_refresh);
+        SampleModel sampleModel3 = new SampleModel("一些列表", R.mipmap.ui_listview);
+        SampleModel sampleModel4 = new SampleModel("GridView", R.mipmap.ui_gridview);
+        SampleModel sampleModel5 = new SampleModel("下拉菜单", R.mipmap.ui_dropdown_menu);
+        SampleModel sampleModel6 = new SampleModel("分段选择", R.mipmap.ui_menu);
+        SampleModel sampleModel7 = new SampleModel("地图相关", R.mipmap.ui_map);
+        SampleModel sampleModel8 = new SampleModel("一些进度条", R.mipmap.ui_loading);
+
+        uiSampleList.add(sampleModel1);
+        uiSampleList.add(sampleModel2);
+        uiSampleList.add(sampleModel3);
+        uiSampleList.add(sampleModel4);
+        uiSampleList.add(sampleModel5);
+        uiSampleList.add(sampleModel6);
+        uiSampleList.add(sampleModel7);
+        uiSampleList.add(sampleModel8);
+        sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
+
+        uiListView.setAdapter(sampleListAdapter);
+        uiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Intent intent = new Intent();
+
+                switch (position) {
+                    case 0:
+                        intent.setClass(mContext, UiDialogActivity.class);
+                        startActivity(intent);
+                        break;
+
+
+                    default:
+                        break;
+
+
+                }
+
+            }
+        });
+
+
+    }
 
     @Override
     public void onDestroyView() {

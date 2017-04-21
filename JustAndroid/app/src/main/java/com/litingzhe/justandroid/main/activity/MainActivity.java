@@ -1,9 +1,11 @@
 package com.litingzhe.justandroid.main.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ import com.litingzhe.justandroid.main.fragment.HomeBaseUIFragment;
 import com.litingzhe.justandroid.main.fragment.OtherUtilsFragment;
 import com.litingzhe.justandroid.main.fragment.ShopFragment;
 import com.ningcui.mylibrary.app.base.AbBaseActivity;
+import com.ningcui.mylibrary.utiils.AbToastUtil;
 import com.ningcui.mylibrary.viewLib.sample.AbViewPager;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -69,6 +72,7 @@ public class MainActivity extends AbBaseActivity {
     private ShopFragment shopFragment;
     private OtherUtilsFragment otherUtilsFragment;
     private ArrayList<Fragment> fragmentList;
+    private boolean isExit=false;
 
 
     @Override
@@ -191,4 +195,35 @@ public class MainActivity extends AbBaseActivity {
         return view;
     }
 
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+
+            if (isExit == false) {
+                isExit = true;
+                AbToastUtil.showToast(mContext,"再按一次退出程序");
+                new Handler().postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        isExit = false;
+                    }
+
+                }, 2000);
+
+            } else {
+
+                finish();
+
+            }
+
+
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

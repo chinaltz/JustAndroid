@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--底部导航Item 布局-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,23 +6,21 @@
 
     <ImageView
         android:id="@+id/tab_icon"
-        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="50px"
-        android:layout_marginTop="10px"
-        android:scaleType="fitXY"
         android:layout_gravity="center_horizontal"
-         />
+        android:layout_marginTop="10px"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
 
     <TextView
-        android:layout_marginTop="10px"
         android:id="@+id/tab_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="25px"
-        android:text="Menu"
         android:layout_marginBottom="10px"
-        />
+        android:layout_marginTop="10px"
+        android:text="Menu"
+        android:textSize="25px" />
 
 </LinearLayout>

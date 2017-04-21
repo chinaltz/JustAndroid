@@ -93,6 +93,7 @@ public class AbSampleDialogFragment extends DialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		return contentView;
 	}
 
@@ -102,7 +103,7 @@ public class AbSampleDialogFragment extends DialogFragment {
 		WindowManager.LayoutParams attributes = window.getAttributes();
 		attributes.gravity = gravity;
 		window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-		window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#88838B8B")));
+		window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
 		super.onActivityCreated(savedInstanceState);
 	}
 

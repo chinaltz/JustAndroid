@@ -73,6 +73,13 @@ public class AbDateUtil {
 
 
 
+	/**
+	 * 描述：String类型的带时区的日期时间转化为yyyy-MM-dd HH:mm 时间字符串.
+	 *
+	 * @param s String形式的日期时间
+	 * @return String yyy-MM-dd HH:mm
+	 */
+
 	public  static  String getDateStringFromUTC(String s){
 
 

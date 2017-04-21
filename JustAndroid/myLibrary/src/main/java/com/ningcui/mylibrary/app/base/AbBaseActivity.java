@@ -21,14 +21,14 @@ import com.zhy.autolayout.AutoLayoutActivity;
  * Info 所有Activity要继承这个父类，便于统一管理
  */
 public abstract class AbBaseActivity extends AutoLayoutActivity {
-public Context mConetxt;
+public Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
-        mConetxt=this;
+        mContext=this;
 
         AbActivityManager.getInstance().addActivity(this);
 

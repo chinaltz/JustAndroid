@@ -3,6 +3,8 @@ package com.litingzhe.justandroid.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.main.activity.MainActivity;
 import com.ningcui.mylibrary.app.base.AbBaseActivity;
+import com.ningcui.mylibrary.utiils.AbToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +33,10 @@ public class LanuchActivity extends AbBaseActivity {
     ImageView lanuchImage;
     @BindView(R.id.countButton)
     Button countButton;
-    private MyCount myCount = new MyCount(5000, 1000);
+    private MyCount myCount;
+
+    private boolean isExit =false;
+
 
 
     @Override
@@ -38,7 +44,7 @@ public class LanuchActivity extends AbBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lanuch);
         ButterKnife.bind(this);
-//        countButton.setText("跳过|"+"3s");
+        myCount = new MyCount(5000, 1000);
         myCount.start();
 
     }
@@ -48,7 +54,8 @@ public class LanuchActivity extends AbBaseActivity {
     @OnClick(R.id.countButton)
     public void onViewClicked() {
 
-        Intent in=new Intent(mConetxt, MainActivity.class);
+        myCount.cancel();
+        Intent in=new Intent(mContext, MainActivity.class);
         startActivity(in);
         finish();
 
@@ -68,7 +75,7 @@ public class LanuchActivity extends AbBaseActivity {
         @Override
         public void onFinish() {
 
-            Intent in=new Intent(mConetxt, MainActivity.class);
+            Intent in=new Intent(mContext, MainActivity.class);
             startActivity(in);
             finish();
 
@@ -81,6 +88,43 @@ public class LanuchActivity extends AbBaseActivity {
             countButton.setText("跳过|"+second+"s");
 
         }
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+
+
+//
+
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+
+            if (isExit == false) {
+            isExit = true;
+            AbToastUtil.showToast(mContext,"再按一次退出程序");
+            new Handler().postDelayed(new Runnable(){
+
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+
+            }, 2000);
+
+        } else {
+
+                myCount.cancel();
+                finish();
+
+            }
+
+
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
 
     }
 
