@@ -38,7 +38,7 @@ import butterknife.OnClick;
  */
 
 
-public class UiDialogActivity extends AbBaseActivity {
+public class MenuUiDialogActivity extends AbBaseActivity {
 
     @BindView(R.id.nav_back)
     LinearLayout navBack;
