@@ -147,8 +147,6 @@ public class MainActivity extends AbBaseActivity {
                         img.setImageResource(icons[i]);
                         title.setTextColor(getResources().getColor(R.color.gray));
                     }
-
-
                 }
             }
 

@@ -35,8 +35,7 @@ public class LanuchActivity extends AbBaseActivity {
     Button countButton;
     private MyCount myCount;
 
-    private boolean isExit =false;
-
+    private boolean isExit = false;
 
 
     @Override
@@ -44,25 +43,23 @@ public class LanuchActivity extends AbBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lanuch);
         ButterKnife.bind(this);
+        //初始化计时器
         myCount = new MyCount(5000, 1000);
+        //开启
         myCount.start();
 
     }
-
 
 
     @OnClick(R.id.countButton)
     public void onViewClicked() {
 
         myCount.cancel();
-        Intent in=new Intent(mContext, MainActivity.class);
+        Intent in = new Intent(mContext, MainActivity.class);
         startActivity(in);
         finish();
 
     }
-
-
-
 
 
     public class MyCount extends CountDownTimer {
@@ -75,7 +72,7 @@ public class LanuchActivity extends AbBaseActivity {
         @Override
         public void onFinish() {
 
-            Intent in=new Intent(mContext, MainActivity.class);
+            Intent in = new Intent(mContext, MainActivity.class);
             startActivity(in);
             finish();
 
@@ -84,8 +81,8 @@ public class LanuchActivity extends AbBaseActivity {
         @Override
         public void onTick(long millisUntilFinished) {
 
-            long second=millisUntilFinished/1000;
-            countButton.setText("跳过|"+second+"s");
+            long second = millisUntilFinished / 1000;
+            countButton.setText("跳过|" + second + "s");
 
         }
 
@@ -94,27 +91,22 @@ public class LanuchActivity extends AbBaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-
-
-//
-
-
         if (keyCode == KeyEvent.KEYCODE_BACK) {
 
 
             if (isExit == false) {
-            isExit = true;
-            AbToastUtil.showToast(mContext,"再按一次退出程序");
-            new Handler().postDelayed(new Runnable(){
+                isExit = true;
+                AbToastUtil.showToast(mContext, "再按一次退出程序");
+                new Handler().postDelayed(new Runnable() {
 
-                @Override
-                public void run() {
-                    isExit = false;
-                }
+                    @Override
+                    public void run() {
+                        isExit = false;
+                    }
 
-            }, 2000);
+                }, 2000);
 
-        } else {
+            } else {
 
                 myCount.cancel();
                 finish();

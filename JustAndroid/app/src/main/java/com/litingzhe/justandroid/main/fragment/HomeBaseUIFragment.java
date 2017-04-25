@@ -13,7 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.activity.UiDialogActivity;
+import com.litingzhe.justandroid.activity.MenuUiDialogActivity;
+import com.litingzhe.justandroid.activity.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
@@ -107,10 +108,13 @@ public class HomeBaseUIFragment extends AbBaseFragment {
 
                 switch (position) {
                     case 0:
-                        intent.setClass(mContext, UiDialogActivity.class);
+                        intent.setClass(mContext, MenuUiDialogActivity.class);
                         startActivity(intent);
                         break;
-
+                    case 1:
+                        intent.setClass(mContext, MenuPullRefreshActivity.class);
+                        startActivity(intent);
+                        break;
 
                     default:
                         break;
