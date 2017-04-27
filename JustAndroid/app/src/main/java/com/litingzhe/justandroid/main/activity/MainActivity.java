@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.main.adapter.MainFragmentAdapter;
-import com.litingzhe.justandroid.main.fragment.DBDataFragment;
+import com.litingzhe.justandroid.main.fragment.NetAndDBDataFragment;
 import com.litingzhe.justandroid.main.fragment.DesignPatternFragment;
 import com.litingzhe.justandroid.main.fragment.HomeBaseUIFragment;
 import com.litingzhe.justandroid.main.fragment.OtherUtilsFragment;
@@ -67,7 +67,7 @@ public class MainActivity extends AbBaseActivity {
     };
 
     private HomeBaseUIFragment homeBaseUIFragment;
-    private DBDataFragment dbDataFragment;
+    private NetAndDBDataFragment netAndDbDataFragment;
     private DesignPatternFragment designPatternFragment;
     private ShopFragment shopFragment;
     private OtherUtilsFragment otherUtilsFragment;
@@ -94,7 +94,7 @@ public class MainActivity extends AbBaseActivity {
 
         homeBaseUIFragment = new HomeBaseUIFragment();
 
-        dbDataFragment = new DBDataFragment();
+        netAndDbDataFragment = new NetAndDBDataFragment();
 
         designPatternFragment = new DesignPatternFragment();
 
@@ -104,7 +104,7 @@ public class MainActivity extends AbBaseActivity {
 
 
         fragmentList.add(homeBaseUIFragment);
-        fragmentList.add(dbDataFragment);
+        fragmentList.add(netAndDbDataFragment);
         fragmentList.add(designPatternFragment);
         fragmentList.add(shopFragment);
         fragmentList.add(otherUtilsFragment);
@@ -113,7 +113,7 @@ public class MainActivity extends AbBaseActivity {
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
 
         titleList = new String[]{
-                "UI", "DB", "设计模式", "购物车", "其他"
+                "UI", "Net&DB", "设计模式", "购物车", "其他"
         };
 
         MainFragmentAdapter adapter = new MainFragmentAdapter(getSupportFragmentManager(), titleList, fragmentList);

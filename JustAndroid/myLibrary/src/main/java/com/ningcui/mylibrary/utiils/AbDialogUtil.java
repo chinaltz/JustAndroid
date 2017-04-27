@@ -151,25 +151,6 @@ public class AbDialogUtil {
         return newFragment;
     }
 
-//
-//    /**
-//     * 显示横向进度框.
-//     *
-//     * @param context      the context
-//     * @param title        标题
-//     * @param message      the message
-//     * @param isCancelable 是否可以取消
-//     */
-//    public static AbProgressHorizontalDialogFragment showHorizontalProgressDialog(Context context, String title,
-//                                                                        String message, boolean isCancelable) {
-//        FragmentActivity activity = (FragmentActivity) context;
-//        AbProgressHorizontalDialogFragment newFragment = AbProgressHorizontalDialogFragment.newInstance(title, message, isCancelable);
-//        FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
-//        // 指定一个系统转场动画
-//        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//        newFragment.show(ft, dialogTag);
-//        return newFragment;
-//    }
 
     /**
      * 显示一个隐藏的的对话框.

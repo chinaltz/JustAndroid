@@ -1,5 +1,6 @@
 package com.litingzhe.justandroid.activity.pullRefresh;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -60,8 +61,7 @@ public class PullToReFreshLayoutActivity extends AbBaseActivity {
             @Override
             public void onHeaderRefresh(AbPullToRefreshView abPullToRefreshView) {
 
-//                getData();
-                Log.i("Tag1234", "onHeaderRefresh" + Thread.currentThread().getName());
+                getData();
 
 
             }
@@ -72,8 +72,7 @@ public class PullToReFreshLayoutActivity extends AbBaseActivity {
             public void onFooterLoad(AbPullToRefreshView abPullToRefreshView) {
 
 
-//                loadData();
-                Log.i("Tag1234", "onFooterLoad" + Thread.currentThread().getName());
+                loadData();
 
 
             }
@@ -84,9 +83,55 @@ public class PullToReFreshLayoutActivity extends AbBaseActivity {
 
     private void loadData() {
 
+        AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                addItem();
+                adapter.notifyDataSetChanged();
+                pulltofreshView.onFooterLoadFinish();
+            }
+        };
+        asyncTask.execute();
+
     }
 
     private void getData() {
+
+        AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                initOignData();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+
+                pulltofreshView.onHeaderRefreshFinish();
+                adapter.notifyDataSetChanged();
+            }
+        };
+        asyncTask.execute();
+
 
     }
 
@@ -109,8 +154,6 @@ public class PullToReFreshLayoutActivity extends AbBaseActivity {
         countIndex = 5;
         return list;
     }
-
-
 
 
 }

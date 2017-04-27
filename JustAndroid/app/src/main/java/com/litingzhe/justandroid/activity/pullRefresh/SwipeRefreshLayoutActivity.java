@@ -84,11 +84,7 @@ public class SwipeRefreshLayoutActivity extends AbBaseActivity {
             @Override
             public void onRefresh() {
 
-                // 开始刷新，设置当前为刷新状态
-                //swipeRefreshLayout.setRefreshing(true);
 
-                // 这里是主线程
-                // 一些比较耗时的操作，比如联网获取数据，需要放到子线程去执行
                 // TODO 获取数据
                 final Random random = new Random();
                 new Handler().postDelayed(new Runnable() {
@@ -104,10 +100,7 @@ public class SwipeRefreshLayoutActivity extends AbBaseActivity {
                     }
                 }, 1200);
 
-                // System.out.println(Thread.currentThread().getName());
 
-                // 这个不能写在外边，不然会直接收起来
-                //swipeRefreshLayout.setRefreshing(false);
             }
         });
 

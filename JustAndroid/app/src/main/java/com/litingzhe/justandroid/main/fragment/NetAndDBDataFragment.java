@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,7 +23,6 @@ import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,26 +32,28 @@ import butterknife.Unbinder;
  * Copyright 李挺哲
  * 创建人：litingzhe
  * 邮箱：453971498@qq.com
- * Created by litingzhe on 2017/4/12 上午10:27.
+ * Created by litingzhe on 2017/4/12 上午10:29.
  * 类描述：
  */
 
 
-public class HomeBaseUIFragment extends AbBaseFragment {
-
+public class NetAndDBDataFragment extends AbBaseFragment {
     @BindView(R.id.nav_back)
     LinearLayout NavBack;
     @BindView(R.id.nav_title)
     TextView navTitle;
     Unbinder unbinder;
-    @BindView(R.id.uiListView)
-    ListView uiListView;
+    @BindView(R.id.nav_right_icon)
+    ImageView navRightIcon;
+    @BindView(R.id.nav_right)
+    LinearLayout navRight;
+    @BindView(R.id.netAndDbListView)
+    ListView netAndDbListView;
     Unbinder unbinder1;
     private Context mContext;
     private View rootView;
-    private List uiSampleList;
-
     private SampleListAdapter sampleListAdapter;
+    private ArrayList uiSampleList;
 
     @Nullable
     @Override
@@ -60,7 +62,10 @@ public class HomeBaseUIFragment extends AbBaseFragment {
         mContext = getActivity();
         if (rootView == null) {
 
-            rootView = inflater.inflate(R.layout.fragment_ui, null);
+            rootView = inflater.inflate(R.layout.fragment_db, null);
+            unbinder = ButterKnife.bind(this, rootView);
+            NavBack.setVisibility(View.GONE);
+            navTitle.setText("网络层+数据持久化");
 
             initDataAndView();
         }
@@ -80,27 +85,17 @@ public class HomeBaseUIFragment extends AbBaseFragment {
         navTitle.setText("常见UI");
         uiSampleList = new ArrayList();
 
-        SampleModel sampleModel1 = new SampleModel("常用对话框", R.mipmap.dialogicon);
-        SampleModel sampleModel2 = new SampleModel("下拉刷新", R.mipmap.ui_refresh);
-        SampleModel sampleModel3 = new SampleModel("一些列表", R.mipmap.ui_listview);
-        SampleModel sampleModel4 = new SampleModel("一些表格布局", R.mipmap.ui_gridview);
-        SampleModel sampleModel5 = new SampleModel("RecycleView", R.mipmap.ui_menu);
-        SampleModel sampleModel6 = new SampleModel("下拉菜单", R.mipmap.ui_dropdown_menu);
-        SampleModel sampleModel7 = new SampleModel("地图相关", R.mipmap.ui_map);
-        SampleModel sampleModel8 = new SampleModel("一些进度条", R.mipmap.ui_loading);
+        SampleModel sampleModel1 = new SampleModel("GreenDao使用", R.mipmap.dialogicon);
+        SampleModel sampleModel2 = new SampleModel("retrofit+OkHttp+RxJava", R.mipmap.ui_refresh);
+
 
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
-        uiSampleList.add(sampleModel3);
-        uiSampleList.add(sampleModel4);
-        uiSampleList.add(sampleModel5);
-        uiSampleList.add(sampleModel6);
-        uiSampleList.add(sampleModel7);
-        uiSampleList.add(sampleModel8);
+
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
 
-        uiListView.setAdapter(sampleListAdapter);
-        uiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        netAndDbListView.setAdapter(sampleListAdapter);
+        netAndDbListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -109,17 +104,14 @@ public class HomeBaseUIFragment extends AbBaseFragment {
 
                 switch (position) {
                     case 0:
-                        intent.setClass(mContext, MenuUiDialogActivity.class);
-                        startActivity(intent);
+
                         break;
                     case 1:
-                        intent.setClass(mContext, MenuPullRefreshActivity.class);
-                        startActivity(intent);
+
                         break;
 
                     case 2:
-                        intent.setClass(mContext, MenuListActivity.class);
-                        startActivity(intent);
+
                         break;
                     default:
                         break;

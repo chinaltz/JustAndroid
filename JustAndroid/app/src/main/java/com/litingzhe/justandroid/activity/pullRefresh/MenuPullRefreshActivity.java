@@ -1,5 +1,6 @@
 package com.litingzhe.justandroid.activity.pullRefresh;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,7 +55,29 @@ public class MenuPullRefreshActivity extends AbBaseActivity {
                 finish();
             }
         });
+        swipeRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+                Intent intent= new Intent(mContext,SwipeRefreshLayoutActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        pullRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent= new Intent(mContext,PullToReFreshLayoutActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
 
     }
 }
