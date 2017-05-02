@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.activity.pullRefresh;
+package com.litingzhe.justandroid.ui.activity.pullRefresh;
 
 import android.content.Intent;
 import android.os.Bundle;

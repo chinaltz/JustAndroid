@@ -14,11 +14,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.activity.MenuUiDialogActivity;
-import com.litingzhe.justandroid.activity.listView.MenuListActivity;
-import com.litingzhe.justandroid.activity.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
+import com.litingzhe.justandroid.netdb.net.activity.NetDemoActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -82,18 +80,15 @@ public class NetAndDBDataFragment extends AbBaseFragment {
     private void initDataAndView() {
         unbinder = ButterKnife.bind(this, rootView);
         NavBack.setVisibility(View.GONE);
-        navTitle.setText("常见UI");
+        navTitle.setText("网络+数据库操作");
         uiSampleList = new ArrayList();
 
-        SampleModel sampleModel1 = new SampleModel("GreenDao使用", R.mipmap.dialogicon);
-        SampleModel sampleModel2 = new SampleModel("retrofit+OkHttp+RxJava", R.mipmap.ui_refresh);
-
-
+        SampleModel sampleModel1 = new SampleModel("retrofit+OkHttp+RxJava简单示例", R.mipmap.rxicon);
+        SampleModel sampleModel2 = new SampleModel("GreenDao使用", R.mipmap.db_icon);
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
 
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
-
         netAndDbListView.setAdapter(sampleListAdapter);
         netAndDbListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -104,7 +99,8 @@ public class NetAndDBDataFragment extends AbBaseFragment {
 
                 switch (position) {
                     case 0:
-
+                        intent.setClass(mContext, NetDemoActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
 

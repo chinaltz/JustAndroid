@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.activity.pullRefresh;
+package com.litingzhe.justandroid.ui.activity.pullRefresh;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,7 +24,6 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by litingzhe on 2016/12/15.

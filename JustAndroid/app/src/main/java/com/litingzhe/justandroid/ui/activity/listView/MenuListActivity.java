@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.activity.listView;
+package com.litingzhe.justandroid.ui.activity.listView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,7 +62,7 @@ public class MenuListActivity extends AbBaseActivity {
         sampleListViewArray = new ArrayList();
 
         SampleModel sampleModel1 = new SampleModel("简单城市列表", R.mipmap.ic_launcher);
-        SampleModel sampleModel2 = new SampleModel("仿IOS分组列表", R.mipmap.ic_launcher);
+        SampleModel sampleModel2 = new SampleModel("侧滑按钮的列表是", R.mipmap.ic_launcher);
         SampleModel sampleModel3 = new SampleModel("拖拽的列表", R.mipmap.ic_launcher);
 
         sampleListViewArray.add(sampleModel1);
@@ -83,6 +83,12 @@ public class MenuListActivity extends AbBaseActivity {
                     case 0:
                         intent.setClass(mContext, CityListViewActivity.class);
                         startActivity(intent);
+                        break;
+
+                    case  1:
+                        intent.setClass(mContext, SwipeLeftActivity.class);
+                        startActivity(intent);
+
                         break;
                     default:
                         break;

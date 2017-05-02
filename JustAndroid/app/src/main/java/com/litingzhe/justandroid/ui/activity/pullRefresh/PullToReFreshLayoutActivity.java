@@ -1,9 +1,8 @@
-package com.litingzhe.justandroid.activity.pullRefresh;
+package com.litingzhe.justandroid.ui.activity.pullRefresh;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +18,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by litingzhe on 2016/12/15.

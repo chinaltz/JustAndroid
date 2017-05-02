@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.activity.listView;
+package com.litingzhe.justandroid.ui.activity.listView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,13 +15,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.main.adapter.CityListAdapter;
-import com.litingzhe.justandroid.model.City;
-import com.ningcui.mylibrary.app.base.AbBaseActivity;
+import com.litingzhe.justandroid.ui.model.City;
+import com.litingzhe.justandroid.ui.model.CityListAdapter;
 import com.ningcui.mylibrary.utiils.AbCharacterUtil;
 import com.ningcui.mylibrary.viewLib.letterlist.AbLetterFilterListView;
 import com.zhy.autolayout.AutoLayoutActivity;
-import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,7 +27,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Copyright 李挺哲

@@ -13,9 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.activity.MenuUiDialogActivity;
-import com.litingzhe.justandroid.activity.listView.MenuListActivity;
-import com.litingzhe.justandroid.activity.pullRefresh.MenuPullRefreshActivity;
+import com.litingzhe.justandroid.ui.activity.MenuUiDialogActivity;
+import com.litingzhe.justandroid.ui.activity.listView.MenuListActivity;
+import com.litingzhe.justandroid.ui.activity.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
@@ -82,21 +82,18 @@ public class HomeBaseUIFragment extends AbBaseFragment {
 
         SampleModel sampleModel1 = new SampleModel("常用对话框", R.mipmap.dialogicon);
         SampleModel sampleModel2 = new SampleModel("下拉刷新", R.mipmap.ui_refresh);
-        SampleModel sampleModel3 = new SampleModel("一些列表", R.mipmap.ui_listview);
-        SampleModel sampleModel4 = new SampleModel("一些表格布局", R.mipmap.ui_gridview);
-        SampleModel sampleModel5 = new SampleModel("RecycleView", R.mipmap.ui_menu);
-        SampleModel sampleModel6 = new SampleModel("下拉菜单", R.mipmap.ui_dropdown_menu);
-        SampleModel sampleModel7 = new SampleModel("地图相关", R.mipmap.ui_map);
-        SampleModel sampleModel8 = new SampleModel("一些进度条", R.mipmap.ui_loading);
+        SampleModel sampleModel3 = new SampleModel("一些列表表格布局", R.mipmap.ui_gridview);
+        SampleModel sampleModel4 = new SampleModel("下拉菜单和分段选择", R.mipmap.ui_dropdown_menu);
+        SampleModel sampleModel5 = new SampleModel("地图相关", R.mipmap.ui_map);
+        SampleModel sampleModel6 = new SampleModel("一些进度条", R.mipmap.ui_loading);
 
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
         uiSampleList.add(sampleModel3);
+
         uiSampleList.add(sampleModel4);
         uiSampleList.add(sampleModel5);
         uiSampleList.add(sampleModel6);
-        uiSampleList.add(sampleModel7);
-        uiSampleList.add(sampleModel8);
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
 
         uiListView.setAdapter(sampleListAdapter);

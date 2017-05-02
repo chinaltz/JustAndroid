@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.model;
+package com.litingzhe.justandroid.ui.model;
 
 
 public class City implements Comparable<City> {

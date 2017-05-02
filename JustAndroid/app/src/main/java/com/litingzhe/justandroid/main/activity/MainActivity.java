@@ -120,6 +120,7 @@ public class MainActivity extends AbBaseActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
+
         //设置ViewPager 是否可以滑动
         viewPager.setPagingEnabled(true);
 

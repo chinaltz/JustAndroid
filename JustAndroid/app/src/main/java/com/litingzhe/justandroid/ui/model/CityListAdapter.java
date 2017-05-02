@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.main.adapter;
+package com.litingzhe.justandroid.ui.model;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.model.City;
+import com.litingzhe.justandroid.ui.model.City;
 import com.zhy.autolayout.utils.AutoUtils;
 
 
