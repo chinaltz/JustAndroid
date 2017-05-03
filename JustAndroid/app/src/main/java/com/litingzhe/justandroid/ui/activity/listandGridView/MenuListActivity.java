@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.ui.activity.listView;
+package com.litingzhe.justandroid.ui.activity.listandGridView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  * 创建人：litingzhe
  * 邮箱：453971498@qq.com
  * Created by litingzhe on 2017/4/26 下午5:20.
- * 类描述：ListView 主页面
+ * 类描述：列表 表格 主页面
  */
 
 
@@ -63,11 +63,12 @@ public class MenuListActivity extends AbBaseActivity {
 
         SampleModel sampleModel1 = new SampleModel("简单城市列表", R.mipmap.ic_launcher);
         SampleModel sampleModel2 = new SampleModel("侧滑按钮的列表是", R.mipmap.ic_launcher);
-        SampleModel sampleModel3 = new SampleModel("拖拽的列表", R.mipmap.ic_launcher);
-
+        SampleModel sampleModel3 = new SampleModel("RecycleView简单使用", R.mipmap.ic_launcher);
+        SampleModel sampleModel4 = new SampleModel("RecycleView瀑布流", R.mipmap.ic_launcher);
         sampleListViewArray.add(sampleModel1);
         sampleListViewArray.add(sampleModel2);
         sampleListViewArray.add(sampleModel3);
+        sampleListViewArray.add(sampleModel4);
         sampleListAdapter = new SampleListAdapter(sampleListViewArray, mContext);
 
         listView.setAdapter(sampleListAdapter);
@@ -85,11 +86,26 @@ public class MenuListActivity extends AbBaseActivity {
                         startActivity(intent);
                         break;
 
-                    case  1:
+                    case 1:
                         intent.setClass(mContext, SwipeLeftActivity.class);
                         startActivity(intent);
 
                         break;
+
+                    case 2:
+                        intent.setClass(mContext, SimpleRecyleViewActivity.class);
+                        startActivity(intent);
+
+                        break;
+
+                    case  3:
+                        intent.setClass(mContext, StaggeredActivity.class);
+                        startActivity(intent);
+
+                        break;
+
+
+
                     default:
                         break;
 

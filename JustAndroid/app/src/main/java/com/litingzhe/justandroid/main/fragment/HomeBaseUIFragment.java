@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.ui.activity.MenuUiDialogActivity;
-import com.litingzhe.justandroid.ui.activity.listView.MenuListActivity;
+import com.litingzhe.justandroid.ui.activity.listandGridView.MenuListActivity;
 import com.litingzhe.justandroid.ui.activity.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;

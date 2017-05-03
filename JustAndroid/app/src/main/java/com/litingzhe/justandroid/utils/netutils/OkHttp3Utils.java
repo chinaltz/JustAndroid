@@ -136,4 +136,23 @@ public class OkHttp3Utils {
         }
         return (current.isAvailable());
     }
+
+
+    public static String get(String url){
+        try {
+            getOkHttpClient().newBuilder().connectTimeout(10000, TimeUnit.MILLISECONDS);
+            Request request = new Request.Builder().url(url).build();
+
+            Response response = getOkHttpClient().newCall(request).execute();
+            if (response.isSuccessful()) {
+                return response.body().string();
+            } else {
+                throw new IOException("Unexpected code " + response);
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

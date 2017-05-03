@@ -18,15 +18,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
+            <!--   android:textAllCaps="false" 是text 英文显示正常 不会全大写-->
             <Button
-            android:id="@+id/Loading"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10px"
-            android:background="@drawable/button_white_maincolor_stroke"
-            android:text="Loading提示框"
-            android:textColor="@color/gray_content" />
+                android:id="@+id/Loading"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:background="@drawable/button_white_maincolor_stroke"
+                android:text="Loading提示框"
+                android:textAllCaps="false"
+                android:textColor="@color/gray_content" />
 
 
             <Button
@@ -36,6 +37,7 @@
                 android:layout_margin="10px"
                 android:background="@drawable/button_white_maincolor_stroke"
                 android:text="Loading进度框"
+                android:textAllCaps="false"
                 android:textColor="@color/gray_content" />
 
 
@@ -46,6 +48,7 @@
                 android:layout_margin="10px"
                 android:background="@drawable/button_white_maincolor_stroke"
                 android:text="ActionSheet 图片选择"
+                android:textAllCaps="false"
                 android:textColor="@color/gray_content" />
 
             <Button
@@ -65,6 +68,7 @@
                 android:layout_margin="10px"
                 android:background="@drawable/button_white_maincolor_stroke"
                 android:text="material design 对话框"
+                android:textAllCaps="false"
                 android:textColor="@color/gray_content" />
 
 

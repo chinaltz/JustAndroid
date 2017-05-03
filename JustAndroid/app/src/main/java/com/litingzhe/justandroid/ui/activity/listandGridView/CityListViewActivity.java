@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.ui.activity.listView;
+package com.litingzhe.justandroid.ui.activity.listandGridView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -37,9 +37,6 @@ import butterknife.ButterKnife;
  */
 
 
-/**
- * Created by litingzhe on 2016/12/15.
- */
 
 public class CityListViewActivity extends AutoLayoutActivity {
 

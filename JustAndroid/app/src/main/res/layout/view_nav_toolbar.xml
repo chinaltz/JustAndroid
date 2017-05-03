@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" 可以让设置显示为白色-->
+    <com.ningcui.mylibrary.viewLib.AutoToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@color/mainColor"
+        android:foregroundTint="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        >
+
+        <LinearLayout
+            android:id="@+id/navToolBarBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="34px"
+            android:orientation="horizontal">
+
+
+            <ImageView
+
+                android:layout_width="16px"
+                android:layout_height="30px"
+                android:layout_gravity="center|left"
+                android:scaleType="fitXY"
+                android:src="@mipmap/nav_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:gravity="center|left"
+                android:paddingLeft="10px"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="32px" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="新闻"
+            android:textColor="@color/white"
+            android:textSize="35px" />
+
+
+    </com.ningcui.mylibrary.viewLib.AutoToolbar>
+
+</LinearLayout>

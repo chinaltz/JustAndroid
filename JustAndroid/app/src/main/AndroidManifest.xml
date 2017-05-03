@@ -88,13 +88,16 @@
         <activity android:name=".ui.activity.pullRefresh.SwipeRefreshLayoutActivity"></activity>
 
         <!--各种ListView-->
-        <activity android:name=".ui.activity.listView.MenuListActivity"></activity>
+        <activity android:name=".ui.activity.listandGridView.MenuListActivity"></activity>
 
         <!--城市列表界面-->
-        <activity android:name=".ui.activity.listView.CityListViewActivity"></activity>
+        <activity android:name=".ui.activity.listandGridView.CityListViewActivity"></activity>
 
-        <activity android:name=".ui.activity.listView.SwipeLeftActivity"></activity>
+        <!--带侧滑按钮的ListView-->
+        <activity android:name=".ui.activity.listandGridView.SwipeLeftActivity"></activity>
 
+        <!--RecycleView的简单使用-->
+        <activity android:name=".ui.activity.listandGridView.SimpleRecyleViewActivity"></activity>
 
         <!--WebView 界面-->
         <activity android:name=".netdb.net.activity.WebViewActivity"></activity>
@@ -103,6 +106,13 @@
 
         <!--网络访问示例 新闻列表-->
         <activity android:name=".netdb.net.activity.NetDemoActivity"></activity>
+
+
+
+        <activity android:name=".ui.activity.listandGridView.StaggeredActivity"></activity>
+
+
+        <activity android:name=".ui.activity.listandGridView.StaggeredGridLayoutActivity"></activity>
 
     </application>
 

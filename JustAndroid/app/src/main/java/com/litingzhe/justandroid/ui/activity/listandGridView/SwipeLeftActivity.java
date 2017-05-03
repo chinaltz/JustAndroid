@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.ui.activity.listView;
+package com.litingzhe.justandroid.ui.activity.listandGridView;
 
 import android.content.ComponentName;
 import android.content.Intent;

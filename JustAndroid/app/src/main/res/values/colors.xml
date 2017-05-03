@@ -82,4 +82,8 @@
     <color name="header">#58567D</color>
     <color name="grgray">#686868</color>
 
+
+    <color name="color_item_press">#ffff0000</color>
+    <color name="color_item_normal">#44ff0000</color>
+
 </resources>
