@@ -64,6 +64,7 @@ public class SimpleRecyleViewActivity extends AbBaseActivity {
                 finish();
             }
         });
+        toolbarTitle.setText("RecycleView简单使用");
 
         initData();
 

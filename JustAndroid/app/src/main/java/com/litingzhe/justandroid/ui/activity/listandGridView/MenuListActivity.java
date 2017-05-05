@@ -51,7 +51,7 @@ public class MenuListActivity extends AbBaseActivity {
         setContentView(R.layout.activity_listview_menu);
         ButterKnife.bind(this);
 
-        navTitle.setText("一些列表");
+        navTitle.setText("一些列表和表格");
         navBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,13 +62,22 @@ public class MenuListActivity extends AbBaseActivity {
         sampleListViewArray = new ArrayList();
 
         SampleModel sampleModel1 = new SampleModel("简单城市列表", R.mipmap.ic_launcher);
-        SampleModel sampleModel2 = new SampleModel("侧滑按钮的列表是", R.mipmap.ic_launcher);
+        SampleModel sampleModel2 = new SampleModel("侧滑按钮的列表使用", R.mipmap.ic_launcher);
         SampleModel sampleModel3 = new SampleModel("RecycleView简单使用", R.mipmap.ic_launcher);
         SampleModel sampleModel4 = new SampleModel("RecycleView瀑布流", R.mipmap.ic_launcher);
+        SampleModel sampleModel5 = new SampleModel("可拖拽的RecyleView", R.mipmap.ic_launcher);
+        SampleModel sampleModel6 = new SampleModel("九宫格解锁", R.mipmap.ic_launcher);
+        SampleModel sampleModel7 = new SampleModel("仿朋友圈", R.mipmap.ic_launcher);
+        SampleModel sampleModel8 = new SampleModel("聊天列表", R.mipmap.ic_launcher);
+
         sampleListViewArray.add(sampleModel1);
         sampleListViewArray.add(sampleModel2);
         sampleListViewArray.add(sampleModel3);
         sampleListViewArray.add(sampleModel4);
+        sampleListViewArray.add(sampleModel5);
+        sampleListViewArray.add(sampleModel6);
+
+
         sampleListAdapter = new SampleListAdapter(sampleListViewArray, mContext);
 
         listView.setAdapter(sampleListAdapter);
@@ -98,15 +107,24 @@ public class MenuListActivity extends AbBaseActivity {
 
                         break;
 
-                    case  3:
+                    case 3:
                         intent.setClass(mContext, StaggeredActivity.class);
                         startActivity(intent);
 
                         break;
 
+                    case  4:
+                        intent.setClass(mContext, DragRecyleViewActivity.class);
+                        startActivity(intent);
+                        break;
 
+                    case  5:
+                        intent.setClass(mContext, NineLockActivity.class);
+                        startActivity(intent);
+                        break;
 
                     default:
+
                         break;
 
 

@@ -85,7 +85,7 @@ public class StaggeredActivity extends AbBaseActivity {
     private void initView() {
 
         recyclerview = (RecyclerView) findViewById(R.id.staggered_recycler);
-        mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        mLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         recyclerview.setLayoutManager(mLayoutManager);
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.staggered_swipe_refresh);
@@ -186,16 +186,16 @@ public class StaggeredActivity extends AbBaseActivity {
                 if (staggeredTypes == null || staggeredTypes.size() == 0) {
                     staggeredTypes = gson.fromJson(jsonData, new TypeToken<List<StaggeredType>>() {
                     }.getType());
-                    StaggeredType pages = new StaggeredType();
-                    pages.setPage(page);
-                    staggeredTypes.add(pages);
+//                    StaggeredType pages = new StaggeredType();
+//                    pages.setPage(page);
+//                    staggeredTypes.add(pages);
                 } else {
                     List<StaggeredType> more = gson.fromJson(jsonData, new TypeToken<List<StaggeredType>>() {
                     }.getType());
                     staggeredTypes.addAll(more);
-                    StaggeredType pages = new StaggeredType();
-                    pages.setPage(page);
-                    staggeredTypes.add(pages);
+//                    StaggeredType pages = new StaggeredType();
+//                    pages.setPage(page);
+//                    staggeredTypes.add(pages);
                 }
 
                 if (mAdapter == null) {
@@ -211,6 +211,8 @@ public class StaggeredActivity extends AbBaseActivity {
 
                         @Override
                         public void onItemLongClick(View view) {
+
+
                             itemTouchHelper.startDrag(recyclerview.getChildViewHolder(view));
                         }
                     });

@@ -75,7 +75,7 @@ public  class SimpleRecyleViewAdapter extends RecyclerView.Adapter<SimpleRecyleV
 				{
 					int pos = holder.getLayoutPosition();
 					mOnItemClickLitener.onItemLongClick(holder.itemView, pos);
-					removeData(pos);
+//					removeData(pos);
 					return false;
 				}
 			});

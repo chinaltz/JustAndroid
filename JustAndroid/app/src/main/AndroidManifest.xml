@@ -108,11 +108,13 @@
         <activity android:name=".netdb.net.activity.NetDemoActivity"></activity>
 
 
-
         <activity android:name=".ui.activity.listandGridView.StaggeredActivity"></activity>
 
 
-        <activity android:name=".ui.activity.listandGridView.StaggeredGridLayoutActivity"></activity>
+        <activity android:name=".ui.activity.listandGridView.DragRecyleViewActivity"></activity>
+
+
+        <activity android:name=".ui.activity.listandGridView.NineLockActivity"></activity>
 
     </application>
 
