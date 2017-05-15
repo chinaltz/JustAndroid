@@ -78,26 +78,26 @@
         <!--UI界面-->
 
         <!--各种对话框-->
-        <activity android:name=".ui.activity.MenuUiDialogActivity"></activity>
+        <activity android:name=".ui.MenuUiDialogActivity"></activity>
 
         <!--下拉刷新 菜单-->
-        <activity android:name=".ui.activity.pullRefresh.MenuPullRefreshActivity"></activity>
+        <activity android:name=".ui.pullRefresh.MenuPullRefreshActivity"></activity>
         <!--常用的下拉刷新页面-->
-        <activity android:name=".ui.activity.pullRefresh.PullToReFreshLayoutActivity"></activity>
+        <activity android:name=".ui.pullRefresh.PullToReFreshLayoutActivity"></activity>
         <!--Android 原生的-->
-        <activity android:name=".ui.activity.pullRefresh.SwipeRefreshLayoutActivity"></activity>
+        <activity android:name=".ui.pullRefresh.SwipeRefreshLayoutActivity"></activity>
 
         <!--各种ListView-->
-        <activity android:name=".ui.activity.listandGridView.MenuListActivity"></activity>
+        <activity android:name=".ui.listandGridView.MenuListActivity"></activity>
 
         <!--城市列表界面-->
-        <activity android:name=".ui.activity.listandGridView.CityListViewActivity"></activity>
+        <activity android:name=".ui.listandGridView.CityListViewActivity"></activity>
 
         <!--带侧滑按钮的ListView-->
-        <activity android:name=".ui.activity.listandGridView.SwipeLeftActivity"></activity>
+        <activity android:name=".ui.listandGridView.SwipeLeftActivity"></activity>
 
         <!--RecycleView的简单使用-->
-        <activity android:name=".ui.activity.listandGridView.SimpleRecyleViewActivity"></activity>
+        <activity android:name=".ui.listandGridView.SimpleRecyleViewActivity"></activity>
 
         <!--WebView 界面-->
         <activity android:name=".netdb.net.activity.WebViewActivity"></activity>
@@ -108,14 +108,37 @@
         <activity android:name=".netdb.net.activity.NetDemoActivity"></activity>
 
 
-        <activity android:name=".ui.activity.listandGridView.StaggeredActivity"></activity>
+        <activity android:name=".ui.listandGridView.StaggeredActivity"></activity>
 
 
-        <activity android:name=".ui.activity.listandGridView.DragRecyleViewActivity"></activity>
+        <activity android:name=".ui.listandGridView.DragRecyleViewActivity"></activity>
 
 
-        <activity android:name=".ui.activity.listandGridView.NineLockActivity"></activity>
+        <activity android:name=".ui.listandGridView.NineLockActivity"></activity>
 
+
+        <activity android:name=".ui.listandGridView.ChatListActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.wechatCircle.activity.WeChatCircleActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.StickyRecyleViewActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.MeunSegmentAndDropActivity"></activity>
+
+
+        <activity android:name=".ui.MenuProgressBarActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.segment.SegmentActivity"  ></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.segment.TabLayoutActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.dropMenu.activity.DropMenuActivity"></activity>
     </application>
 
 </manifest>

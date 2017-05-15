@@ -13,11 +13,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.ui.activity.MenuUiDialogActivity;
-import com.litingzhe.justandroid.ui.activity.listandGridView.MenuListActivity;
-import com.litingzhe.justandroid.ui.activity.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
+import com.litingzhe.justandroid.ui.MenuProgressBarActivity;
+import com.litingzhe.justandroid.ui.MenuUiDialogActivity;
+import com.litingzhe.justandroid.ui.listandGridView.MenuListActivity;
+import com.litingzhe.justandroid.ui.pullRefresh.MenuPullRefreshActivity;
+import com.litingzhe.justandroid.ui.segmentAndSelectMenu.MeunSegmentAndDropActivity;
+import com.litingzhe.justandroid.ui.segmentAndSelectMenu.segment.SegmentActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -117,6 +120,24 @@ public class HomeBaseUIFragment extends AbBaseFragment {
                     case 2:
                         intent.setClass(mContext, MenuListActivity.class);
                         startActivity(intent);
+                        break;
+
+
+                    case  3:
+                        intent.setClass(mContext, MeunSegmentAndDropActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case  4:
+                        intent.setClass(mContext, SegmentActivity.class);
+                        startActivity(intent);
+
+                        break;
+
+                    case  5:
+                        intent.setClass(mContext, MenuProgressBarActivity.class);
+                        startActivity(intent);
+
                         break;
                     default:
                         break;

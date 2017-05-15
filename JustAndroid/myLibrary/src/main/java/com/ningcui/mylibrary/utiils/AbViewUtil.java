@@ -2,18 +2,23 @@
 package com.ningcui.mylibrary.utiils;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Paint;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Build.VERSION;
 import android.text.TextPaint;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.view.ViewParent;
+import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -618,5 +623,26 @@ public class AbViewUtil {
 		ImageView imageView = findViewById(view,id);
 		imageView.setImageResource(resId);
 	}
+
+
+
+	/**
+	 * 获取屏幕尺寸
+	 */
+	@SuppressWarnings("deprecation")
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+	public static Point getScreenSize(Context context){
+		WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		Display display = windowManager.getDefaultDisplay();
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2){
+			return new Point(display.getWidth(), display.getHeight());
+		}else{
+			Point point = new Point();
+			display.getSize(point);
+			return point;
+		}
+	}
+
+
 
 }

@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:arb="http://schemas.android.com/apk/res-auto"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_navbar"></include>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+           >
+
+            <com.ningcui.mylibrary.viewLib.segment.SegmentedGroup
+                android:id="@+id/segmented2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                segmentedgroup:sc_border_width="1dp"
+                segmentedgroup:sc_checked_text_color="#7C4DFF"
+                segmentedgroup:sc_corner_radius="10dp"
+                segmentedgroup:sc_tint_color="#FFEB3B"
+                segmentedgroup:sc_unchecked_tint_color="#ff0000">
+
+                <RadioButton
+                    android:id="@+id/button21"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="One" />
+
+                <RadioButton
+                    android:id="@+id/button22"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Two" />
+            </com.ningcui.mylibrary.viewLib.segment.SegmentedGroup>
+
+
+
+                <com.ningcui.mylibrary.viewLib.segment.SegmentedGroup
+                    android:layout_marginTop="10px"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:id="@+id/segmented3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    segmentedgroup:sc_border_width="1dp"
+                    segmentedgroup:sc_corner_radius="5dp"
+                    segmentedgroup:sc_tint_color="#009688">
+
+                    <RadioButton
+                        android:id="@+id/button31"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="One" />
+
+                    <RadioButton
+                        android:id="@+id/button32"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Two" />
+
+                    <RadioButton
+                        android:id="@+id/button33"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Three" />
+                </com.ningcui.mylibrary.viewLib.segment.SegmentedGroup>
+
+
+
+                <com.ningcui.mylibrary.viewLib.segment.SegmentedGroup
+
+                    android:layout_gravity="center"
+                    android:id="@+id/segmented4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    segmentedgroup:sc_border_width="1dp"
+                    segmentedgroup:sc_corner_radius="5dp"
+                    segmentedgroup:sc_tint_color="#F44336">
+
+                    <com.ningcui.mylibrary.viewLib.segment.AwesomeRadioButton
+                        android:id="@+id/button41"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        arb:awesome_text="{fa_apple}" />
+
+                    <com.ningcui.mylibrary.viewLib.segment.AwesomeRadioButton
+                        android:id="@+id/button42"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        arb:awesome_text="VS" />
+
+                    <com.ningcui.mylibrary.viewLib.segment.AwesomeRadioButton
+
+
+                        android:id="@+id/button43"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        arb:awesome_text="{fa_google} " />
+                </com.ningcui.mylibrary.viewLib.segment.SegmentedGroup>
+
+
+
+
+
+                    <com.ningcui.mylibrary.viewLib.segment.SegmentedGroup
+
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        segmentedgroup:sc_border_width="5dp"
+                        segmentedgroup:sc_corner_radius="7dp"
+                        segmentedgroup:sc_tint_color="#ff33b5e5">
+
+                        <RadioButton
+                            style="@style/RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="One" />
+
+                        <RadioButton
+                            style="@style/RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Two" />
+
+                        <RadioButton
+                            style="@style/RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Three" />
+                    </com.ningcui.mylibrary.viewLib.segment.SegmentedGroup>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
