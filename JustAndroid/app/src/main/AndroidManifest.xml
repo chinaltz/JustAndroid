@@ -157,6 +157,11 @@
 
         <activity android:name=".netdb.db.activity.GreenDaoActivity"></activity>
 
+
+        <activity android:name=".designMode.mvp.activity.MvpGreenDaoActivity"></activity>
+
+        <activity android:name=".designMode.mvvm.activity.MvvmGreenDaoActivity"></activity>
+
     </application>
 
 </manifest>

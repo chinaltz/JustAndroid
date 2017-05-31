@@ -1,6 +1,5 @@
-package com.litingzhe.justandroid.netdb.db.activity;
+package com.litingzhe.justandroid.designMode.mvvm.activity;
 
-import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +17,7 @@ import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.designMode.mvvm.adapter.MvvmNoteAdapter;
 import com.litingzhe.justandroid.global.MyApplication;
 import com.litingzhe.justandroid.netdb.db.adapter.NoteAdapter;
 import com.litingzhe.justandroid.netdb.db.dao.NoteDao;
@@ -44,7 +44,7 @@ import butterknife.ButterKnife;
  */
 
 
-public class GreenDaoActivity extends AbBaseActivity {
+public class MvvmGreenDaoActivity extends AbBaseActivity {
 
     @BindView(R.id.nav_back)
     LinearLayout navBack;
@@ -63,7 +63,7 @@ public class GreenDaoActivity extends AbBaseActivity {
     private NoteDao noteDao;
 
     private List<Note> noteList;
-    private NoteAdapter adapter;
+    private MvvmNoteAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +77,14 @@ public class GreenDaoActivity extends AbBaseActivity {
         navRight.setVisibility(View.VISIBLE);
         navRightText.setText("添加");
         noteList = new ArrayList<>();
-        adapter = new NoteAdapter(mContext, noteList);
+        adapter = new MvvmNoteAdapter(mContext, noteList);
 
+        navBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         navRight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,8 +129,9 @@ public class GreenDaoActivity extends AbBaseActivity {
 
 
         listView.setAdapter(adapter);
-
         refreshNoteList();
+
+
 //1.创建侧滑按钮菜单
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
@@ -157,9 +164,10 @@ public class GreenDaoActivity extends AbBaseActivity {
                 switch (index) {
                     case 0:
                         // delete
-                        noteDao.insert(noteList.get(position));
+                        noteDao.delete(noteList.get(position));
 
                         refreshNoteList();
+
                         break;
 
                 }

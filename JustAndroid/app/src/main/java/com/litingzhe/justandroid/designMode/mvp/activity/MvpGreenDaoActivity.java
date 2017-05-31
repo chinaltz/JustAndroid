@@ -1,6 +1,5 @@
-package com.litingzhe.justandroid.netdb.db.activity;
+package com.litingzhe.justandroid.designMode.mvp.activity;
 
-import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +17,8 @@ import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.designMode.mvp.presenter.NotePresenter;
+import com.litingzhe.justandroid.designMode.mvp.view.NoteView;
 import com.litingzhe.justandroid.global.MyApplication;
 import com.litingzhe.justandroid.netdb.db.adapter.NoteAdapter;
 import com.litingzhe.justandroid.netdb.db.dao.NoteDao;
@@ -25,6 +26,7 @@ import com.litingzhe.justandroid.netdb.db.model.Note;
 import com.ningcui.mylibrary.app.base.AbBaseActivity;
 import com.ningcui.mylibrary.utiils.AbDialogUtil;
 import com.ningcui.mylibrary.utiils.AbStrUtil;
+import com.ningcui.mylibrary.utiils.AbToastUtil;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
@@ -44,7 +46,7 @@ import butterknife.ButterKnife;
  */
 
 
-public class GreenDaoActivity extends AbBaseActivity {
+public class MvpGreenDaoActivity extends AbBaseActivity implements NoteView {
 
     @BindView(R.id.nav_back)
     LinearLayout navBack;
@@ -65,12 +67,21 @@ public class GreenDaoActivity extends AbBaseActivity {
     private List<Note> noteList;
     private NoteAdapter adapter;
 
+    private NotePresenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_note);
         ButterKnife.bind(this);
+        navBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        presenter = new NotePresenter(this);
         noteDao = MyApplication.getInstance().getDaoSession().getNoteDao();
         navBack.setVisibility(View.VISIBLE);
         navTitle.setText("简单笔记本");
@@ -84,54 +95,20 @@ public class GreenDaoActivity extends AbBaseActivity {
             @Override
             public void onClick(View v) {
 
-
-                View view = LayoutInflater.from(mContext).inflate(R.layout.view_add_note, null);
-                final EditText titleText = (EditText) view.findViewById(R.id.titleText);
-                final EditText contentText = (EditText) view.findViewById(R.id.contentText);
-                Button commitButton = (Button) view.findViewById(R.id.commitButton);
-                AbDialogUtil.showDialog(view, Gravity.CENTER);
-
-                commitButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String title = titleText.getText().toString();
-                        String content = contentText.getText().toString();
-                        if (AbStrUtil.isEmpty(title)) {
-                            AbDialogUtil.removeDialog(mContext);
-                            return;
-                        }
-                        if (AbStrUtil.isEmpty(content)) {
-                            AbDialogUtil.removeDialog(mContext);
-                            return;
-                        }
-                        Note note = new Note();
-                        note.setCreatDate(new Date());
-                        note.setNoteTitle(title);
-                        note.setFavFlag(0);
-                        note.setNoteContent(content);
-                        noteDao.insert(note);
-                        AbDialogUtil.removeDialog(mContext);
-                        refreshNoteList();
-
-
-                    }
-                });
-
-
+                showAddNoteDialog();
             }
         });
 
-
+        refreshList();
         listView.setAdapter(adapter);
 
-        refreshNoteList();
+
 //1.创建侧滑按钮菜单
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
             @Override
             public void create(SwipeMenu menu) {
                 // create "open" item
-
 
                 // create "delete" item
                 SwipeMenuItem deleteItem = new SwipeMenuItem(
@@ -157,9 +134,8 @@ public class GreenDaoActivity extends AbBaseActivity {
                 switch (index) {
                     case 0:
                         // delete
-                        noteDao.insert(noteList.get(position));
 
-                        refreshNoteList();
+                        presenter.deleteNote(noteList.get(position));
                         break;
 
                 }
@@ -171,12 +147,65 @@ public class GreenDaoActivity extends AbBaseActivity {
     }
 
 
-    private void refreshNoteList() {
+    @Override
+    public void showMsg(String Msg) {
 
+        AbToastUtil.showToast(mContext, Msg);
+
+    }
+
+
+    @Override
+    public void refreshList() {
         noteList.clear();
         QueryBuilder<Note> qb = noteDao.queryBuilder();
         noteList.addAll(qb.list());
         adapter.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public void showAddNoteDialog() {
+
+        View view = LayoutInflater.from(mContext).inflate(R.layout.view_add_note, null);
+        final EditText titleText = (EditText) view.findViewById(R.id.titleText);
+        final EditText contentText = (EditText) view.findViewById(R.id.contentText);
+        Button commitButton = (Button) view.findViewById(R.id.commitButton);
+        AbDialogUtil.showDialog(view, Gravity.CENTER);
+
+        commitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String title = titleText.getText().toString();
+                String content = contentText.getText().toString();
+                if (AbStrUtil.isEmpty(title)) {
+//                    disMissDialog();
+                    showMsg("请输入记事本标题");
+                    return;
+                }
+                if (AbStrUtil.isEmpty(content)) {
+//                    disMissDialog();
+                    showMsg("请输入记事本内容");
+                    return;
+                }
+                Note note = new Note();
+                note.setCreatDate(new Date());
+                note.setNoteTitle(title);
+                note.setFavFlag(0);
+                note.setNoteContent(content);
+                presenter.addNote(note);
+
+
+            }
+        });
+
+    }
+
+    @Override
+    public void disMissDialog() {
+
+        AbDialogUtil.removeDialog(mContext);
 
 
     }

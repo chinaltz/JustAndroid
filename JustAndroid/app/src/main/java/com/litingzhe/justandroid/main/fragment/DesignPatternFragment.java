@@ -1,16 +1,20 @@
 package com.litingzhe.justandroid.main.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.designMode.mvp.activity.MvpGreenDaoActivity;
+import com.litingzhe.justandroid.designMode.mvvm.activity.MvvmGreenDaoActivity;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
@@ -61,13 +65,42 @@ public class DesignPatternFragment extends AbBaseFragment {
 
         uiSampleList = new ArrayList();
 
-        SampleModel sampleModel1 = new SampleModel("retrofit+OkHttp+RxJava简单示例", R.mipmap.rxicon);
-        SampleModel sampleModel2 = new SampleModel("GreenDao使用", R.mipmap.db_icon);
+        SampleModel sampleModel1 = new SampleModel("简单MVP记事本", R.mipmap.rxicon);
+        SampleModel sampleModel2 = new SampleModel("MVVM记事本", R.mipmap.db_icon);
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
 
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
         designListView.setAdapter(sampleListAdapter);
+
+        designListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Intent intent = new Intent();
+                switch (position) {
+
+                    case 0:
+                        intent.setClass(mContext, MvpGreenDaoActivity.class);
+
+                        startActivity(intent);
+                        break;
+
+
+                    case 1:
+
+                        intent.setClass(mContext, MvvmGreenDaoActivity.class);
+
+                        startActivity(intent);
+
+
+                        break;
+                }
+
+
+            }
+        });
         AutoUtils.auto(rootView);
 
 
