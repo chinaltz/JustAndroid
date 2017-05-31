@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
+import com.litingzhe.justandroid.netdb.db.activity.GreenDaoActivity;
 import com.litingzhe.justandroid.netdb.net.activity.NetDemoActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -103,7 +104,8 @@ public class NetAndDBDataFragment extends AbBaseFragment {
                         startActivity(intent);
                         break;
                     case 1:
-
+                        intent.setClass(mContext, GreenDaoActivity.class);
+                        startActivity(intent);
                         break;
 
                     case 2:

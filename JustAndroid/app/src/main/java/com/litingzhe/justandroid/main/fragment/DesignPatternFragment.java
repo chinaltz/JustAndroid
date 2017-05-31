@@ -7,11 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
+import com.litingzhe.justandroid.main.model.SampleModel;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,8 +38,12 @@ public class DesignPatternFragment extends AbBaseFragment {
     @BindView(R.id.nav_title)
     TextView navTitle;
     Unbinder unbinder;
+    @BindView(R.id.designListView)
+    ListView designListView;
     private Context mContext;
     private View rootView;
+    private ArrayList uiSampleList;
+    private SampleListAdapter sampleListAdapter;
 
     @Nullable
     @Override
@@ -46,10 +55,19 @@ public class DesignPatternFragment extends AbBaseFragment {
             rootView = inflater.inflate(R.layout.fragment_design, null);
             unbinder = ButterKnife.bind(this, rootView);
             NavBack.setVisibility(View.GONE);
-            navTitle.setText("设计模式");
+            navTitle.setText("Android开发方式及思想");
         }
 
 
+        uiSampleList = new ArrayList();
+
+        SampleModel sampleModel1 = new SampleModel("retrofit+OkHttp+RxJava简单示例", R.mipmap.rxicon);
+        SampleModel sampleModel2 = new SampleModel("GreenDao使用", R.mipmap.db_icon);
+        uiSampleList.add(sampleModel1);
+        uiSampleList.add(sampleModel2);
+
+        sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
+        designListView.setAdapter(sampleListAdapter);
         AutoUtils.auto(rootView);
 
 

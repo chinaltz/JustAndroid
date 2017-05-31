@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.ui.listandGridView.adapter.CityListAdapter;
-import com.litingzhe.justandroid.ui.listandGridView.recyleDivider.City;
+import com.litingzhe.justandroid.ui.listandGridView.model.City;
 import com.ningcui.mylibrary.utiils.AbCharacterUtil;
 import com.ningcui.mylibrary.viewLib.letterlist.AbLetterFilterListView;
 import com.zhy.autolayout.AutoLayoutActivity;

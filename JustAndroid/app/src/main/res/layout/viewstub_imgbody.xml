@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <com.litingzhe.justandroid.ui.activity.listandGridView.wechatCircle.widgets.MultiImageView
+    <com.litingzhe.justandroid.ui.listandGridView.wechatCircle.widgets.MultiImageView
         android:id="@+id/multiImagView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp" >
-    </com.litingzhe.justandroid.ui.activity.listandGridView.wechatCircle.widgets.MultiImageView>
+    </com.litingzhe.justandroid.ui.listandGridView.wechatCircle.widgets.MultiImageView>
 
 </LinearLayout>

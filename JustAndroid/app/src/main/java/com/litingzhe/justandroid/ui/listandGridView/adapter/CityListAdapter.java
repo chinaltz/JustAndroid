@@ -11,7 +11,7 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
-import com.litingzhe.justandroid.ui.listandGridView.recyleDivider.City;
+import com.litingzhe.justandroid.ui.listandGridView.model.City;
 import com.zhy.autolayout.utils.AutoUtils;
 
 

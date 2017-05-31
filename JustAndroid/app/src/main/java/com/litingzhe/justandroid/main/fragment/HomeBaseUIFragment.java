@@ -18,9 +18,9 @@ import com.litingzhe.justandroid.main.model.SampleModel;
 import com.litingzhe.justandroid.ui.MenuProgressBarActivity;
 import com.litingzhe.justandroid.ui.MenuUiDialogActivity;
 import com.litingzhe.justandroid.ui.listandGridView.MenuListActivity;
+import com.litingzhe.justandroid.ui.mapView.MapActivity;
 import com.litingzhe.justandroid.ui.pullRefresh.MenuPullRefreshActivity;
 import com.litingzhe.justandroid.ui.segmentAndSelectMenu.MeunSegmentAndDropActivity;
-import com.litingzhe.justandroid.ui.segmentAndSelectMenu.segment.SegmentActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -129,7 +129,7 @@ public class HomeBaseUIFragment extends AbBaseFragment {
                         break;
 
                     case  4:
-                        intent.setClass(mContext, SegmentActivity.class);
+                        intent.setClass(mContext, MapActivity.class);
                         startActivity(intent);
 
                         break;

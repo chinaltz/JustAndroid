@@ -13,7 +13,7 @@ import com.litingzhe.justandroid.R;
  */
 
 public class HeaderProductLayout extends LinearLayout {
-    ImageView mImageView;
+    LinearLayout mImageView;
     public HeaderProductLayout(Context context) {
         super(context);
         initView(context);
@@ -21,7 +21,7 @@ public class HeaderProductLayout extends LinearLayout {
 
     private void initView(Context context) {
         View view = LayoutInflater.from(context).inflate(R.layout.header_layout, this);
-        mImageView = (ImageView) view.findViewById(R.id.header_product_image);
+        mImageView = (LinearLayout) view.findViewById(R.id.header_product_image);
     }
 
     //量取view此时Y轴的距离

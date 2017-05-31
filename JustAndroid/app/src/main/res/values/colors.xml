@@ -32,7 +32,7 @@
     <color name="orange_translucent_light">#20FD7400</color>
     <color name="gray">#909090</color>
     <color name="gray_light">#D0D0D0</color>
-    <color name="gray_translucent_light">#20D0D0D0</color>
+    <color name="gray_translucent_light">#40D0D0D0</color>
     <color name="gray_dark">#303030</color>
 
     <color name="gray_bg">#E7E7E7</color>

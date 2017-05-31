@@ -51,7 +51,7 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <com.litingzhe.justandroid.ui.activity.listandGridView.wechatCircle.widgets.ExpandTextView
+            <com.litingzhe.justandroid.ui.listandGridView.wechatCircle.widgets.ExpandTextView
                 android:id="@+id/contentTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:background="@drawable/im_distribute_comm_bg"
                 android:orientation="vertical" >
 
-                <com.litingzhe.justandroid.ui.activity.listandGridView.wechatCircle.widgets.PraiseListView
+                <com.litingzhe.justandroid.ui.listandGridView.wechatCircle.widgets.PraiseListView
                     android:id="@+id/praiseListView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
                     android:layout_marginTop="5dip"
                     android:layout_marginBottom="5dip"
                     />
-                <com.litingzhe.justandroid.ui.activity.listandGridView.wechatCircle.widgets.CommentListView
+                <com.litingzhe.justandroid.ui.listandGridView.wechatCircle.widgets.CommentListView
                     android:id="@+id/commentList"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"

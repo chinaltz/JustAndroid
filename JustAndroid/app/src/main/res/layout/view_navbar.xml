@@ -65,6 +65,7 @@
             android:src="@mipmap/nav_back" />
 
         <TextView
+            android:id="@+id/nav_right_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"

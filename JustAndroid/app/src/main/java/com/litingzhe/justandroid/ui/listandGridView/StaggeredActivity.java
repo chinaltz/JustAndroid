@@ -159,7 +159,6 @@ public class StaggeredActivity extends AbBaseActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
             swipeRefreshLayout.setRefreshing(true);
         }
 

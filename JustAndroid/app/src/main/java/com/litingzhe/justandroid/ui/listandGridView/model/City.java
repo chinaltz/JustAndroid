@@ -1,4 +1,4 @@
-package com.litingzhe.justandroid.ui.listandGridView.recyleDivider;
+package com.litingzhe.justandroid.ui.listandGridView.model;
 
 
 public class City implements Comparable<City> {

@@ -10,10 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.litingzhe.justandroid.R;
+import com.litingzhe.justandroid.ui.listandGridView.adapter.StickRecyleViewAdapter;
 import com.ningcui.mylibrary.app.base.AbBaseActivity;
-import com.zhy.adapter.recyclerview.CommonAdapter;
-import com.zhy.adapter.recyclerview.base.ViewHolder;
-import com.zhy.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +41,8 @@ public class StickyRecyleViewActivity extends AbBaseActivity {
     @BindView(R.id.main_recycler)
     RecyclerView mainRecycler;
 
-    ImageView mImageView;
+    LinearLayout mImageView;
     private HeaderProductLayout mHeaderView;
-    private CommonAdapter<String> mAdapter;
-    private HeaderAndFooterWrapper mHeaderAndFooterWrapper;
 
     private int imageY=0;
 
@@ -56,7 +52,7 @@ public class StickyRecyleViewActivity extends AbBaseActivity {
 
         setContentView(R.layout.activity_stickyview);
         ButterKnife.bind(this);
-        mImageView = (ImageView) findViewById(R.id.header_product_image);
+        mImageView = (LinearLayout) findViewById(R.id.header_product_image);
 
 
         navBack.setOnClickListener(new View.OnClickListener() {
@@ -74,26 +70,10 @@ public class StickyRecyleViewActivity extends AbBaseActivity {
         for (int i = 0; i < 10; i++) {
             strings.add("" + i);
         }
-
         mHeaderView = new HeaderProductLayout(this);
-
-
-        mAdapter = new CommonAdapter<String>(this, R.layout.item_stick_layout, strings)
-        {
-
-            @Override
-            protected void convert(ViewHolder holder, String s, int position) {
-
-            }
-        };
-
-        mAdapter.getItemCount();
-
-        mHeaderAndFooterWrapper = new HeaderAndFooterWrapper(mAdapter);
-
-        mHeaderAndFooterWrapper.addHeaderView(mHeaderView);
-
-        mainRecycler.setAdapter(mHeaderAndFooterWrapper);
+        StickRecyleViewAdapter simpleAdapter = new StickRecyleViewAdapter(strings);
+        simpleAdapter.addHeaderView(mHeaderView);
+        mainRecycler.setAdapter(simpleAdapter);
 
         mainRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
 

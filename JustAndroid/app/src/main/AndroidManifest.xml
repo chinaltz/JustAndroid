@@ -7,7 +7,7 @@
      
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
+    <!--允许程序设置内置sd卡的写权限-->
 
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     这个权限用于进行网络定位
@@ -52,6 +52,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b23ce3bb6548b227a0c0602e369420fb" />
+
+        <service android:name="com.amap.api.location.APSService"></service>
 
         <meta-data
             android:name="design_width"
@@ -139,6 +146,17 @@
 
 
         <activity android:name=".ui.segmentAndSelectMenu.dropMenu.activity.DropMenuActivity"></activity>
+
+
+        <activity android:name=".ui.mapView.MapActivity"></activity>
+
+        <activity android:name=".ui.mapView.AMapUtils.SingleRouteCalculateActivityAMapNav"></activity>
+
+        <activity android:name=".ui.mapView.AMapUtils.AMapNavBaseActivity"></activity>
+
+
+        <activity android:name=".netdb.db.activity.GreenDaoActivity"></activity>
+
     </application>
 
 </manifest>

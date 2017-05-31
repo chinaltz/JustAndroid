@@ -5,4 +5,14 @@
     android:layout_height="match_parent">
     <include layout="@layout/view_navbar" />
 
+    <ListView
+
+        android:id="@+id/designListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/light_translucent"
+        android:dividerHeight="2px" />
+
+
+
 </LinearLayout>
