@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/view_navbar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:gravity="center|left"
+        android:text="请绑定真实有效车牌，否则无法进行电子支付"
+        android:textColor="@color/common_textColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6">
+
+
+            <EditText
+                android:id="@+id/edit_province"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="苏"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="A"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="6"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="6"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="6"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="6"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/carcode_edittext_bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:hint="6"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="28sp"
+
+                />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="85px"
+                android:layout_height="85px"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_red_circle"
+                android:text="新增"
+                android:textColor="@color/white"
+
+                android:id="@+id/addCarButton" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="30px"
+                android:text="请输入车牌号"
+                android:textColor="#fa5f00" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:layout_marginTop="30px"
+                android:background="@color/gray_line" />
+
+            <ListView
+                android:id="@+id/carList"
+                android:layout_width="match_parent"
+                android:layout_height="320px"
+                android:layout_marginTop="100px"
+
+                android:background="@color/common_bg" />
+
+
+            <Button
+                android:id="@+id/setDefaultButton"
+                android:layout_width="match_parent"
+                android:layout_height="90px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="45px"
+                android:background="@drawable/button_red_circle"
+                android:text="设置默认"
+                android:textColor="@color/white"
+                android:textSize="36px" />
+
+            <RelativeLayout
+                android:id="@+id/deleteCarButton"
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="15px"
+                android:background="@drawable/selector_clearcolor_gray_item"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="42px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:gravity="center"
+                        android:paddingRight="10px"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/delete_car" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="删除车辆"
+                        android:textColor="@color/black"
+                        android:textSize="35px" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <android.inputmethodservice.KeyboardView
+            android:id="@+id/keyboard_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:focusable="true"
+            android:shadowColor="@color/mainColor"
+            android:focusableInTouchMode="true"
+            android:keyBackground="@drawable/button_grayborder_whiteground"
+            android:keyTextColor="@color/mainColor"
+            android:keyTextSize="16sp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

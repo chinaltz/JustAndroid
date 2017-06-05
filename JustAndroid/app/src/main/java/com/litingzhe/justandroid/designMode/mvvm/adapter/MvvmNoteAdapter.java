@@ -7,17 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
-
 import com.litingzhe.justandroid.BR;
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.netdb.db.model.Note;
-import com.ningcui.mylibrary.utiils.AbDateUtil;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Copyright 李挺哲

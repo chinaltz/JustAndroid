@@ -17,6 +17,8 @@ import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
 import com.litingzhe.justandroid.ui.MenuProgressBarActivity;
 import com.litingzhe.justandroid.ui.MenuUiDialogActivity;
+import com.litingzhe.justandroid.ui.keyBoard.KeyBoardMenuListActivity;
+import com.litingzhe.justandroid.ui.keyBoard.activity.CarNumInputActivty;
 import com.litingzhe.justandroid.ui.listandGridView.MenuListActivity;
 import com.litingzhe.justandroid.ui.mapView.MapActivity;
 import com.litingzhe.justandroid.ui.pullRefresh.MenuPullRefreshActivity;
@@ -90,6 +92,10 @@ public class HomeBaseUIFragment extends AbBaseFragment {
         SampleModel sampleModel5 = new SampleModel("地图相关", R.mipmap.ui_map);
         SampleModel sampleModel6 = new SampleModel("一些进度条", R.mipmap.ui_loading);
 
+
+        SampleModel sampleModel7 = new SampleModel("一些键盘", R.drawable.keyboard);
+
+
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
         uiSampleList.add(sampleModel3);
@@ -97,6 +103,7 @@ public class HomeBaseUIFragment extends AbBaseFragment {
         uiSampleList.add(sampleModel4);
         uiSampleList.add(sampleModel5);
         uiSampleList.add(sampleModel6);
+        uiSampleList.add(sampleModel7);
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
 
         uiListView.setAdapter(sampleListAdapter);
@@ -123,19 +130,25 @@ public class HomeBaseUIFragment extends AbBaseFragment {
                         break;
 
 
-                    case  3:
+                    case 3:
                         intent.setClass(mContext, MeunSegmentAndDropActivity.class);
                         startActivity(intent);
                         break;
 
-                    case  4:
+                    case 4:
                         intent.setClass(mContext, MapActivity.class);
                         startActivity(intent);
 
                         break;
 
-                    case  5:
+                    case 5:
                         intent.setClass(mContext, MenuProgressBarActivity.class);
+                        startActivity(intent);
+
+                        break;
+
+                    case 6:
+                        intent.setClass(mContext, KeyBoardMenuListActivity.class);
                         startActivity(intent);
 
                         break;

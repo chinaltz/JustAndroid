@@ -4,11 +4,8 @@
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-     
-
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <!--允许程序设置内置sd卡的写权限-->
-
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     这个权限用于进行网络定位
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -53,7 +50,6 @@
         android:theme="@style/AppTheme">
 
 
-
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="b23ce3bb6548b227a0c0602e369420fb" />
@@ -79,7 +75,11 @@
         <activity
             android:name=".main.activity.MainActivity"
 
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask">
+
+            <data android:scheme="wx0c9beaaff560cabe" />
+
+        </activity>
 
 
         <!--UI界面-->
@@ -139,7 +139,7 @@
         <activity android:name=".ui.MenuProgressBarActivity"></activity>
 
 
-        <activity android:name=".ui.segmentAndSelectMenu.segment.SegmentActivity"  ></activity>
+        <activity android:name=".ui.segmentAndSelectMenu.segment.SegmentActivity"></activity>
 
 
         <activity android:name=".ui.segmentAndSelectMenu.segment.TabLayoutActivity"></activity>
@@ -161,6 +161,40 @@
         <activity android:name=".designMode.mvp.activity.MvpGreenDaoActivity"></activity>
 
         <activity android:name=".designMode.mvvm.activity.MvvmGreenDaoActivity"></activity>
+
+
+        <activity
+            android:name="com.donghui.park.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"></activity>
+
+        <activity android:name=".pay.activity.PayActivity"></activity>
+
+        <!--微信支付-->
+        <receiver android:name=".pay.utils.WChatPayUtils.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!--支付宝支付-->
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+
+        <activity android:name=".ui.keyBoard.activity.CarNumInputActivty"></activity>
+
+        <activity android:name=".ui.keyBoard.KeyBoardMenuListActivity"></activity>
+
+
+        <activity android:name=".ui.keyBoard.activity.WeiPayKeyBoardActivity"></activity>
 
     </application>
 

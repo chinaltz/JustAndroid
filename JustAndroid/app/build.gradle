@@ -1,16 +1,14 @@
 apply plugin: 'com.android.application'
 android {
-
-    dataBinding{
+    dataBinding {
         enabled true
     }
-
     signingConfigs {
         debug {
-            keyAlias 'justAndroid'
-            keyPassword 'litingzhe'
-            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
-            storePassword 'litingzhe'
+            keyAlias 'donghui'
+            keyPassword 'donghuipark'
+            storeFile file('/Users/litingzhe/JustAndroid/JustAndroid/park.keystore')
+            storePassword 'donghuipark'
         }
         release {
             keyAlias 'justAndroid'
@@ -21,9 +19,8 @@ android {
     }
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
-
     defaultConfig {
-        applicationId "com.litingzhe.justandroid"
+        applicationId 'com.donghui.park'
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -42,6 +39,8 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
         }
+    }
+    productFlavors {
     }
 }
 
@@ -84,19 +83,17 @@ dependencies {
     //九宫格解锁
     compile 'com.andrognito.patternlockview:patternlockview:1.0.0'
     compile 'pub.devrel:easypermissions:0.4.0'
-
     compile('com.github.bumptech.glide:okhttp3-integration:1.4.0') {
         exclude group: 'glide-parent'
     }
-
     compile files('libs/AMap3DMap_5.0.0_AMapNavi_5.1.0_20170515.jar')
     compile files('libs/AMap_Location_V3.4.0_20170427.jar')
     compile files('libs/Msc.jar')
     //动画
     compile 'com.daimajia.androidanimations:library:1.1.2@aar'
     //拓展性更高的侧滑
-    compile "com.daimajia.swipelayout:library:1.2.0@aar"
-
-
+    compile 'com.daimajia.swipelayout:library:1.2.0@aar'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.17'
+    compile files('libs/alipaySdk-20161222.jar')
+    compile files('libs/libammsdk.jar')
 }

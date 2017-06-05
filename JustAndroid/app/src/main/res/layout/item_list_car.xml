@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+        <LinearLayout
+
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/defaultFlag"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="42px"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/car_setdefault"
+                android:paddingRight="10px"
+                />
+
+            <TextView
+                android:id="@+id/carNumber"
+                android:paddingLeft="30px"
+                android:textColor="@color/mainColor"
+                android:textSize="37px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="苏AH6875" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
