@@ -84,7 +84,7 @@ public class NetAndDBDataFragment extends AbBaseFragment {
         navTitle.setText("网络+数据库操作");
         uiSampleList = new ArrayList();
 
-        SampleModel sampleModel1 = new SampleModel("retrofit+OkHttp+RxJava简单示例", R.mipmap.rxicon);
+        SampleModel sampleModel1 = new SampleModel("retrofit+OkHttp+RxJava简单示例", R.drawable.net);
         SampleModel sampleModel2 = new SampleModel("GreenDao使用", R.mipmap.db_icon);
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);

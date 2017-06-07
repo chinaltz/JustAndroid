@@ -96,4 +96,5 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.17'
     compile files('libs/alipaySdk-20161222.jar')
     compile files('libs/libammsdk.jar')
+    compile files('libs/zxing.jar')
 }

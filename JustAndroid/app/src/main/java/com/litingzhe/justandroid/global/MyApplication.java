@@ -3,10 +3,12 @@ package com.litingzhe.justandroid.global;
 import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.DisplayMetrics;
 
 import com.litingzhe.justandroid.netdb.db.dao.DaoMaster;
 import com.litingzhe.justandroid.netdb.db.dao.DaoSession;
 import com.litingzhe.justandroid.utils.dbutils.DBHelper;
+import com.ningcui.mylibrary.utiils.AbViewUtil;
 import com.ningcui.mylibrary.viewLib.segment.utils.TypefaceProvider;
 
 /**
@@ -26,6 +28,7 @@ public class MyApplication extends Application {
         super.onCreate();
         this.instance = this;
 
+        initDisplayOpinion();
         setDatabase();
 
         TypefaceProvider.registerDefaultIconSets();
@@ -67,6 +70,18 @@ public class MyApplication extends Application {
     public static Context getContext(){
         return instance;
     }
+
+
+    private void initDisplayOpinion() {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        AbViewUtil.density = dm.density;
+        AbViewUtil.densityDPI = dm.densityDpi;
+        AbViewUtil.screenWidthPx = dm.widthPixels;
+        AbViewUtil.screenhightPx = dm.heightPixels;
+        AbViewUtil.screenWidthDip = AbViewUtil.px2dip(getApplicationContext(), dm.widthPixels);
+        AbViewUtil.screenHightDip = AbViewUtil.px2dip(getApplicationContext(), dm.heightPixels);
+    }
+
 
 
 

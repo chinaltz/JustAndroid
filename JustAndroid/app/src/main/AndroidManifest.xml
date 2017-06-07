@@ -196,6 +196,15 @@
 
         <activity android:name=".ui.keyBoard.activity.WeiPayKeyBoardActivity"></activity>
 
+
+        <activity
+            android:name=".someOther.camera.activity.CaptureActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+
+
+
+        <activity android:name=".someOther.qrCode.activity.QRCaptureActivity"></activity>
+
     </application>
 
 </manifest>

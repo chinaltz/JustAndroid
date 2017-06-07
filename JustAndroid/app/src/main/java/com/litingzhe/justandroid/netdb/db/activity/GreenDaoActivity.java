@@ -157,7 +157,7 @@ public class GreenDaoActivity extends AbBaseActivity {
                 switch (index) {
                     case 0:
                         // delete
-                        noteDao.insert(noteList.get(position));
+                        noteDao.delete(noteList.get(position));
 
                         refreshNoteList();
                         break;
