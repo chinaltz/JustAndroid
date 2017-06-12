@@ -3,16 +3,16 @@ package com.litingzhe.justandroid.netService;
 import com.litingzhe.justandroid.netdb.net.model.NewList;
 import com.litingzhe.justandroid.utils.netutils.RetrofitUtils;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
-import rx.Observable;
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Copyright 李挺哲
@@ -69,7 +69,7 @@ public class NetWork extends RetrofitUtils {
     public static <T> void setSubscribe(Observable<T> observable, Observer<T> observer) {
         observable.subscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.newThread())//子线程访问网络
-                .observeOn(AndroidSchedulers.mainThread())//回调到主线程
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
 

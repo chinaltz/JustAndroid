@@ -202,9 +202,21 @@
             android:configChanges="keyboardHidden|orientation"></activity>
 
 
-
         <activity android:name=".someOther.qrCode.activity.QRCaptureActivity"></activity>
 
+
+        <activity android:name=".someOther.videoPlayer.activity.VideoPlayerActivity"></activity>
+
+
+        <activity android:name=".someOther.musicPlayer.MusicPlayerActivity"></activity>
+
+        <service
+            android:name=".someOther.musicPlayer.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+        <activity android:name=".someOther.imagePicker.activity.ImageVideoPickActivity"></activity>
     </application>
 
 </manifest>

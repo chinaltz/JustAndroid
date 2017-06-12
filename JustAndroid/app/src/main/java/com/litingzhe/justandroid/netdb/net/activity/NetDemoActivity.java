@@ -23,7 +23,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observer;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Copyright 李挺哲
@@ -106,11 +107,16 @@ public class NetDemoActivity extends AbBaseActivity {
 
         NetWork.getNewsList("5c1b6939d3b5c7f9286e74b4bbeea009", "10", new Observer<NewList>() {
             @Override
-            public void onCompleted() {
+            public void onSubscribe(Disposable d) {
 
-                AbDialogUtil.removeDialog(mContext);
+            }
 
-                PullToRefreshView.onHeaderRefreshFinish();
+            @Override
+            public void onNext(NewList newList) {
+
+                newsAdapter.clearItems();
+                newsAdapter.addItems(newList.getNewslist());
+
             }
 
             @Override
@@ -119,14 +125,14 @@ public class NetDemoActivity extends AbBaseActivity {
             }
 
             @Override
-            public void onNext(NewList news) {
+            public void onComplete() {
 
-
-                newsAdapter.clearItems();
-                newsAdapter.addItems(news.getNewslist());
-
+                AbDialogUtil.removeDialog(mContext);
+//
+                PullToRefreshView.onHeaderRefreshFinish();
 
             }
+
         });
 
 

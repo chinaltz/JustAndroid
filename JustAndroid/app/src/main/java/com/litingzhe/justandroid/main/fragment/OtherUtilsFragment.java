@@ -17,11 +17,11 @@ import android.widget.TextView;
 import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
-import com.litingzhe.justandroid.netdb.db.activity.GreenDaoActivity;
-import com.litingzhe.justandroid.netdb.net.activity.NetDemoActivity;
 import com.litingzhe.justandroid.someOther.camera.activity.CaptureActivity;
+import com.litingzhe.justandroid.someOther.imagePicker.activity.ImageVideoPickActivity;
+import com.litingzhe.justandroid.someOther.musicPlayer.MusicPlayerActivity;
 import com.litingzhe.justandroid.someOther.qrCode.activity.QRCaptureActivity;
-import com.litingzhe.justandroid.ui.mapView.AMapUtils.LocationProvider;
+import com.litingzhe.justandroid.someOther.videoPlayer.activity.VideoPlayerActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -105,8 +105,8 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
         SampleModel sampleModel3 = new SampleModel("图片/视频选择", R.drawable.selectimage);
         SampleModel sampleModel4 = new SampleModel("视频播放", R.drawable.videoplayer);
         SampleModel sampleModel5 = new SampleModel("音频播放", R.drawable.music);
-        SampleModel sampleModel6 = new SampleModel("录音机", R.drawable.record);
-        SampleModel sampleModel7 = new SampleModel("WEEX混合开发", R.drawable.weex);
+//        SampleModel sampleModel6 = new SampleModel("录音机", R.drawable.record);
+        SampleModel sampleModel6 = new SampleModel("WEEX混合开发", R.drawable.weex);
 
 
         uiSampleList.add(sampleModel1);
@@ -115,7 +115,7 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
         uiSampleList.add(sampleModel4);
         uiSampleList.add(sampleModel5);
         uiSampleList.add(sampleModel6);
-        uiSampleList.add(sampleModel7);
+//        uiSampleList.add(sampleModel7);
 
 
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
@@ -135,8 +135,21 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
                         didQrStartCapture();
                         break;
 
-                    case 2:
 
+                    case 2:
+                        intent.setClass(mContext, ImageVideoPickActivity.class);
+                        startActivity(intent);
+
+                        break;
+
+                    case 3:
+                        intent.setClass(mContext, VideoPlayerActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case 4:
+                        intent.setClass(mContext, MusicPlayerActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;
@@ -160,7 +173,6 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
     }
 
 
-
     @AfterPermissionGranted(REQUEST_QRCamera_PERM)
     public void didQrStartCapture() {
 
@@ -178,7 +190,6 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
                     REQUEST_QRCamera_PERM, Manifest.permission.CAMERA);
         }
     }
-
 
 
     @AfterPermissionGranted(REQUEST_Camera_PERM)

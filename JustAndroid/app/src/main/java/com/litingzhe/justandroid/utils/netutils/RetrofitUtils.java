@@ -4,7 +4,7 @@ import com.litingzhe.justandroid.utils.netutils.StringFactory.StringConverterFac
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -43,7 +43,7 @@ public abstract class RetrofitUtils {
                     //字符串
 //                    .addConverterFactory(StringConverterFactory.create())
                     //添加回调库，采用RxJava
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     //设置使用okhttp网络请求
                     .client(mOkHttpClient)
                     .build();
