@@ -108,6 +108,8 @@ public class SwipeRefreshLayoutActivity extends AbBaseActivity {
         swipeRefreshView.setOnLoadListener(new SwipeRefreshView.OnLoadListener() {
             @Override
             public void onLoad() {
+
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {

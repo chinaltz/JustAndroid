@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
  * 创建人：litingzhe
  * 邮箱：453971498@qq.com
  * Created by litingzhe on 2017/4/11 下午3:22.
- * 类描述：MainActivity 主页
+ * 类描述：WeexActivity 主页
  */
 
 

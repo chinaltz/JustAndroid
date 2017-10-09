@@ -5,10 +5,10 @@ android {
     }
     signingConfigs {
         debug {
-            keyAlias 'donghui'
-            keyPassword 'donghuipark'
-            storeFile file('/Users/litingzhe/JustAndroid/JustAndroid/park.keystore')
-            storePassword 'donghuipark'
+            keyAlias 'justAndroid'
+            keyPassword 'litingzhe'
+            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
+            storePassword 'litingzhe'
         }
         release {
             keyAlias 'justAndroid'
@@ -20,7 +20,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId 'com.donghui.park'
+        applicationId 'com.litingzhe.justandroid'
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -74,7 +74,6 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.okhttp3:okhttp:3.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
-
     //GreenDao数据库操作
     compile 'org.greenrobot:greendao:3.2.2'
     compile 'org.greenrobot:greendao-generator:3.2.2'
@@ -95,7 +94,6 @@ dependencies {
     compile 'com.daimajia.swipelayout:library:1.2.0@aar'
     //哔哩哔哩 视频播放
     compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.8.1'
-
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.17'
     //支付宝
     compile files('libs/alipaySdk-20161222.jar')
@@ -104,4 +102,9 @@ dependencies {
     //二维码
     compile files('libs/zxing.jar')
     compile project(':myLibrary')
+    //weex 需要使用的库
+    compile 'com.alibaba:fastjson:1.1.46.android'
+    compile 'com.taobao.android:weex_sdk:0.10.0@aar'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.zhy:okhttputils:2.6.1'
 }

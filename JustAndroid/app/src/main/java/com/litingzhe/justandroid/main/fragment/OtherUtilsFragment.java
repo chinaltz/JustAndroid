@@ -22,6 +22,7 @@ import com.litingzhe.justandroid.someOther.imagePicker.activity.ImageVideoPickAc
 import com.litingzhe.justandroid.someOther.musicPlayer.MusicPlayerActivity;
 import com.litingzhe.justandroid.someOther.qrCode.activity.QRCaptureActivity;
 import com.litingzhe.justandroid.someOther.videoPlayer.activity.VideoPlayerActivity;
+import com.litingzhe.justandroid.someOther.weex.activity.WeexActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -149,6 +150,11 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
 
                     case 4:
                         intent.setClass(mContext, MusicPlayerActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case 5:
+                        intent.setClass(mContext, WeexActivity.class);
                         startActivity(intent);
                         break;
                     default:

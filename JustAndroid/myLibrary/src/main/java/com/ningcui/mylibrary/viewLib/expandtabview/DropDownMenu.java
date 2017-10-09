@@ -21,9 +21,6 @@ import com.ningcui.mylibrary.utiils.AbViewUtil;
 import java.util.List;
 
 
-/**
- * Created by dongjunkun on 2015/6/17.
- */
 public class DropDownMenu extends LinearLayout {
 
     //顶部菜单布局

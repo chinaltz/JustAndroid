@@ -76,7 +76,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="20px"
             android:layout_weight="1"
-            android:background="@color/common_bg"
+            android:background="@color/white"
             android:paddingBottom="5px"
             android:paddingTop="5px">
 

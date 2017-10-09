@@ -217,6 +217,8 @@
 
 
         <activity android:name=".someOther.imagePicker.activity.ImageVideoPickActivity"></activity>
+
+        <activity android:name=".someOther.weex.activity.WeexActivity"></activity>
     </application>
 
 </manifest>
