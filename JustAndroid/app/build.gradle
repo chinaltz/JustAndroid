@@ -100,7 +100,7 @@ dependencies {
     //微信支付
     compile files('libs/libammsdk.jar')
     //二维码
-    compile files('libs/zxing.jar')
+//    compile files('libs/zxing.jar')
     compile project(':myLibrary')
     //weex 需要使用的库
     compile 'com.alibaba:fastjson:1.1.46.android'
