@@ -8,4 +8,7 @@
 /captures
 .externalNativeBuild
 /.idea/
-/.idea/misc.xml
+/myLibrary/src/test/
+/myLibrary/src/androidTest/
+/app/src/androidTest/
+/app/src/test/
