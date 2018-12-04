@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/view_navbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95px"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="6px"
+            android:background="@color/mainColor"
+            android:text="热门商圈"
+            android:textColor="@color/white"
+            android:textSize="28px" />
+
+        <com.ningcui.mylibrary.viewLib.HorizontalListView
+            android:id="@+id/horizontalListView"
+            android:layout_width="match_parent"
+            android:layout_height="95px">
+
+
+        </com.ningcui.mylibrary.viewLib.HorizontalListView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginLeft="20px"
+
+            android:layout_marginTop="25px">
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="120px"
+                android:background="@drawable/nearby_searchbar"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/nearby_search"
+                android:gravity="center"
+                android:hint="搜索"
+                android:textColor="@color/gray_line"
+                android:textSize="28px"
+
+                />
+
+
+            <Button
+
+                android:id="@+id/locationButton"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20px"
+                android:background="@drawable/location_pressed"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/paopaoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transparent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/parkDetialLineraLayout"
+                android:layout_width="match_parent"
+                android:layout_height="220px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/parkAddressText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center|left"
+                        android:paddingLeft="30px"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:paddingLeft="30px"
+                            android:text="空车位："
+                            android:textColor="@color/black"
+                            android:textSize="30px" />
+
+                        <TextView
+                            android:id="@+id/canUseParkNumberText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:paddingLeft="30px"
+                            android:text="230"
+                            android:textColor="#48b723"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:paddingLeft="30px"
+                            android:text="距离："
+                            android:textColor="@color/black"
+                            android:textSize="30px" />
+
+                        <TextView
+                            android:id="@+id/distanceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:paddingLeft="30px"
+                            android:text="1.4KM"
+                            android:textColor="@color/black"
+                            android:textSize="30px" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center|right"
+                                android:layout_marginRight="30px"
+                                android:src="@drawable/profile_right_arrow" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:paddingLeft="30px"
+                        android:text="收费:"
+                        android:textColor="@color/black"
+                        android:textSize="30px" />
+
+                    <TextView
+                        android:id="@+id/perForTimeText"
+                        android:layout_width="240px"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center|left"
+                        android:paddingLeft="10px"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="30px" />
+
+
+                    <TextView
+
+                        android:id="@+id/supportOnlineText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:ellipsize="end"
+                        android:gravity="center|left"
+                        android:paddingLeft="10px"
+                        android:singleLine="true"
+                        android:text="支持线上支付"
+                        android:textColor="@color/green"
+                        android:textSize="30px" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/goHereButton"
+                android:layout_width="672px"
+                android:layout_height="90px"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30px"
+                android:layout_marginTop="30px"
+                android:background="@drawable/nearby_gohere" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

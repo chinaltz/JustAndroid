@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="1000dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="2dip"
+            android:background="@color/gray_bg">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="80dip"
+                android:layout_height="40dip"
+                android:layout_margin="2dip"
+                android:background="@drawable/button_maincolor"
+                android:text="取消"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/okBtn"
+                android:layout_width="80dip"
+                android:layout_height="40dip"
+                android:layout_margin="2dip"
+                android:background="@drawable/button_maincolor"
+                android:text="确定"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/mWheelView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:background="@android:color/white">
+
+            <com.ningcui.mylibrary.viewLib.wheel.AbWheelView
+                android:id="@+id/wheelView1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"/>
+
+
+
+            <com.ningcui.mylibrary.viewLib.wheel.AbWheelView
+                android:id="@+id/wheelView3"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"/>
+
+            <com.ningcui.mylibrary.viewLib.wheel.AbWheelView
+                android:id="@+id/wheelView2"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_navbar"></include>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_line"></View>
+
+    <com.ningcui.mylibrary.viewLib.refresh.AbPullToRefreshView
+        android:id="@+id/chat_PullRefreshView"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <!--// android:descendantFocusability="afterDescendants"
+
+        viewgroup只有当其子类控件不需要获取焦点时才获取焦点-->
+
+        <!-- android:stackFromBottom="true" 列表显示在列表的最下面 -->
+        <ListView
+            android:id="@+id/chat_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"
+            android:descendantFocusability="afterDescendants"
+            android:divider="@null"
+            android:dividerHeight="0px"
+            android:listSelector="@color/transparent"
+            android:stackFromBottom="true" />
+
+
+    </com.ningcui.mylibrary.viewLib.refresh.AbPullToRefreshView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_line" />
+
+    <LinearLayout
+        android:id="@+id/chatFooterLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="5px"
+            android:paddingTop="5px">
+
+            <ImageButton
+                android:id="@+id/voiceBtn"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/button_selector_chat_voice"
+                android:gravity="center_horizontal|center_vertical"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20px"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingBottom="5px"
+            android:paddingTop="5px">
+
+            <EditText
+                android:id="@+id/tv_send_content"
+                android:layout_width="fill_parent"
+                android:layout_height="70px"
+                android:background="@drawable/button_white_maincolor_stroke"
+                android:minHeight="50px"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/voiceSendBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="70px"
+                android:layout_gravity="center"
+                android:background="@drawable/button_selector_white"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="按住说话"
+                android:textColor="@color/gray"
+                android:textSize="30px"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20px"
+            android:orientation="horizontal"
+            android:paddingBottom="5px"
+            android:paddingTop="5px">
+
+            <Button
+                android:id="@+id/sendBtn"
+                android:layout_width="120px"
+                android:layout_height="70px"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/button_selector_green"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="发送"
+                android:textColor="@color/white"
+                android:textSize="30px"
+
+                android:visibility="gone"
+
+                />
+
+            <ImageButton
+                android:id="@+id/addBtn"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/button_selector_chat_add"
+                android:gravity="center_horizontal|center_vertical"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_line" />
+
+    <LinearLayout
+        android:id="@+id/chatAppPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:paddingBottom="10px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingTop="20px"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/send_picture"
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/app_panel_pic"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="图片"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/send_camera"
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon_camera"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="拍照"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/send_vedio"
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/app_panel_video"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="视频"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/app_panel_location"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="位置"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/app_panel_friend"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="名片"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:paddingTop="10px"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="10px"
+                android:paddingRight="0px">
+
+                <ImageButton
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:background="@drawable/app_panel_item_bg"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/app_panel_add"
+                    android:textColor="@color/gray_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="5px"
+                    android:text="添加"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="25px" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

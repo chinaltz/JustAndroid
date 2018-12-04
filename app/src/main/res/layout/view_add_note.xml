@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="250dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/button_grayborder_whiteground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_grayborder_whiteground"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:padding="20dp"
+            android:text="标题" />
+
+        <EditText
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="请输入标题" />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/contentText"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/button_grayborder_whiteground"
+        android:gravity="left|top"
+        android:hint="请输入内容"
+        android:inputType="textMultiLine"
+        android:padding="20dp" />
+
+    <Button
+        android:id="@+id/commitButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10px"
+        android:background="@drawable/button_grayborder_whiteground"
+        android:text="提交"
+        android:textAllCaps="false"
+        android:textColor="@color/gray_content" />
+
+
+</LinearLayout>

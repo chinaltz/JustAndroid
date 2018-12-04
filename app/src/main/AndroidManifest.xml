@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.litingzhe.justandroid">
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--允许程序设置内置sd卡的写权限-->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    这个权限用于进行网络定位
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 开机启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
+    <application
+        android:name=".global.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b23ce3bb6548b227a0c0602e369420fb" />
+
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <meta-data
+            android:name="design_width"
+            android:value="768"></meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1280"></meta-data>
+
+        <activity android:name=".main.LanuchActivity">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.activity.MainActivity"
+
+            android:launchMode="singleTask">
+
+            <data android:scheme="wx0c9beaaff560cabe" />
+
+        </activity>
+
+
+        <!--UI界面-->
+
+        <!--各种对话框-->
+        <activity android:name=".ui.MenuUiDialogActivity"></activity>
+
+        <!--下拉刷新 菜单-->
+        <activity android:name=".ui.pullRefresh.MenuPullRefreshActivity"></activity>
+        <!--常用的下拉刷新页面-->
+        <activity android:name=".ui.pullRefresh.PullToReFreshLayoutActivity"></activity>
+        <!--Android 原生的-->
+        <activity android:name=".ui.pullRefresh.SwipeRefreshLayoutActivity"></activity>
+
+        <!--各种ListView-->
+        <activity android:name=".ui.listandGridView.MenuListActivity"></activity>
+
+        <!--城市列表界面-->
+        <activity android:name=".ui.listandGridView.CityListViewActivity"></activity>
+
+        <!--带侧滑按钮的ListView-->
+        <activity android:name=".ui.listandGridView.SwipeLeftActivity"></activity>
+
+        <!--RecycleView的简单使用-->
+        <activity android:name=".ui.listandGridView.SimpleRecyleViewActivity"></activity>
+
+        <!--WebView 界面-->
+        <activity android:name=".netdb.net.activity.WebViewActivity"></activity>
+
+        <!--网络层-->
+
+        <!--网络访问示例 新闻列表-->
+        <activity android:name=".netdb.net.activity.NetDemoActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.StaggeredActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.DragRecyleViewActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.NineLockActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.ChatListActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.wechatCircle.activity.WeChatCircleActivity"></activity>
+
+
+        <activity android:name=".ui.listandGridView.StickyRecyleViewActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.MeunSegmentAndDropActivity"></activity>
+
+
+        <activity android:name=".ui.MenuProgressBarActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.segment.SegmentActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.segment.TabLayoutActivity"></activity>
+
+
+        <activity android:name=".ui.segmentAndSelectMenu.dropMenu.activity.DropMenuActivity"></activity>
+
+
+        <activity android:name=".ui.mapView.MapActivity"></activity>
+
+        <activity android:name=".ui.mapView.AMapUtils.SingleRouteCalculateActivityAMapNav"></activity>
+
+        <activity android:name=".ui.mapView.AMapUtils.AMapNavBaseActivity"></activity>
+
+
+        <activity android:name=".netdb.db.activity.GreenDaoActivity"></activity>
+
+
+        <activity android:name=".designMode.mvp.activity.MvpGreenDaoActivity"></activity>
+
+        <activity android:name=".designMode.mvvm.activity.MvvmGreenDaoActivity"></activity>
+
+
+        <activity
+            android:name="com.donghui.park.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"></activity>
+
+        <activity android:name=".pay.activity.PayActivity"></activity>
+
+        <!--微信支付-->
+        <receiver android:name=".pay.utils.WChatPayUtils.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!--支付宝支付-->
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+
+        <activity android:name=".ui.keyBoard.activity.CarNumInputActivty"></activity>
+
+        <activity android:name=".ui.keyBoard.KeyBoardMenuListActivity"></activity>
+
+
+        <activity android:name=".ui.keyBoard.activity.WeiPayKeyBoardActivity"></activity>
+
+
+        <activity
+            android:name=".someOther.camera.activity.CaptureActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+
+
+        <activity android:name=".someOther.qrCode.activity.QRCaptureActivity"></activity>
+
+
+        <activity android:name=".someOther.videoPlayer.activity.VideoPlayerActivity"></activity>
+
+
+        <activity android:name=".someOther.musicPlayer.MusicPlayerActivity"></activity>
+
+        <service
+            android:name=".someOther.musicPlayer.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+        <activity android:name=".someOther.imagePicker.activity.ImageVideoPickActivity"></activity>
+
+        <activity android:name=".someOther.weex.activity.WeexActivity"></activity>
+    </application>
+
+</manifest>
