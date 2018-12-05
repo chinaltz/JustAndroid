@@ -74,6 +74,7 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
     public static final int REQUEST_Camera_PERM = 1011;
     public static final int REQUEST_QRCamera_PERM = 1012;
 
+    //相机拍视频请求码
     public static final int REQUEST_Camera_CAPTUREVIDEO = 1013;
 
     @Nullable
