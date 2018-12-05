@@ -63,4 +63,17 @@
     <string name="VideoView_player_AndroidMediaPlayer">Player: AndroidMediaPlayer</string>
     <string name="VideoView_player_IjkMediaPlayer">Player: IjkMediaPlayer</string>
     <string name="VideoView_player_IjkExoMediaPlayer">Player: IjkExoMediaPlayer</string>
+
+
+
+    <string name="capture_video_size_in_kb">视频文件大小为: %1$dKB,</string>
+    <string name="capture_video_size_in_mb">视频文件大小为: %1$.2fMB,</string>
+
+
+
+    <string name="move_up_to_cancel">手指上滑，取消发送</string>
+    <string name="release_to_cancel">松开手指，取消发送</string>
+    <string name="Send_voice_need_sdcard_support">发送语音需要sdcard支持</string>
+    <string name="empty"></string>
+    <string name="recoding_fail">录音失败，请重试！</string>
 </resources>

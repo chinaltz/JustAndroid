@@ -4,18 +4,18 @@ android {
         enabled true
     }
     signingConfigs {
-        debug {
-            keyAlias 'justAndroid'
-            keyPassword 'litingzhe'
-            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
-            storePassword 'litingzhe'
-        }
-        release {
-            keyAlias 'justAndroid'
-            keyPassword 'litingzhe'
-            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
-            storePassword 'litingzhe'
-        }
+//        debug {
+//            keyAlias 'justAndroid'
+//            keyPassword 'litingzhe'
+//            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
+//            storePassword 'litingzhe'
+//        }
+//        release {
+//            keyAlias 'justAndroid'
+//            keyPassword 'litingzhe'
+//            storeFile file('/Users/litingzhe/Documents/AndroidStudiojks/justAndroid.jks')
+//            storePassword 'litingzhe'
+//        }
     }
     compileSdkVersion 25
     buildToolsVersion "25.0.0"

@@ -197,7 +197,7 @@
 	                timeout: 30000,
 	                method: 'GET',
 	                type: 'json',
-	                url: 'http://news-at.zhihu.com/api/4/theme/11'
+	                url: 'https://news-at.zhihu.com/api/4/news/latest'
 	            }, callback);
 	        },
 	        toWebView: function toWebView(url) {

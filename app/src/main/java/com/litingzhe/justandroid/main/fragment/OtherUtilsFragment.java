@@ -1,9 +1,11 @@
 package com.litingzhe.justandroid.main.fragment;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,20 +20,25 @@ import com.litingzhe.justandroid.R;
 import com.litingzhe.justandroid.main.adapter.SampleListAdapter;
 import com.litingzhe.justandroid.main.model.SampleModel;
 import com.litingzhe.justandroid.someOther.camera.activity.CaptureActivity;
+import com.litingzhe.justandroid.someOther.captureVideo.CaptureVideoActivity;
 import com.litingzhe.justandroid.someOther.imagePicker.activity.ImageVideoPickActivity;
 import com.litingzhe.justandroid.someOther.musicPlayer.MusicPlayerActivity;
 import com.litingzhe.justandroid.someOther.qrCode.activity.QRCaptureActivity;
 import com.litingzhe.justandroid.someOther.videoPlayer.activity.VideoPlayerActivity;
+import com.litingzhe.justandroid.someOther.voiceRecord.activity.VoiceRecordActivity;
 import com.litingzhe.justandroid.someOther.weex.activity.WeexActivity;
 import com.ningcui.mylibrary.app.base.AbBaseFragment;
+import com.ningcui.mylibrary.utiils.AbStrUtil;
 import com.zhy.autolayout.utils.AutoUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import freemarker.template.utility.StringUtil;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -67,6 +74,7 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
     public static final int REQUEST_Camera_PERM = 1011;
     public static final int REQUEST_QRCamera_PERM = 1012;
 
+    public static final int REQUEST_Camera_CAPTUREVIDEO = 1013;
 
     @Nullable
     @Override
@@ -106,9 +114,9 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
         SampleModel sampleModel3 = new SampleModel("图片/视频选择", R.drawable.selectimage);
         SampleModel sampleModel4 = new SampleModel("视频播放", R.drawable.videoplayer);
         SampleModel sampleModel5 = new SampleModel("音频播放", R.drawable.music);
-//        SampleModel sampleModel6 = new SampleModel("录音机", R.drawable.record);
         SampleModel sampleModel6 = new SampleModel("WEEX混合开发", R.drawable.weex);
-
+        SampleModel sampleModel7 = new SampleModel("录音机", R.drawable.voice_record);
+        SampleModel sampleModel8 = new SampleModel("视频录制", R.drawable.video_capture);
 
         uiSampleList.add(sampleModel1);
         uiSampleList.add(sampleModel2);
@@ -116,8 +124,8 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
         uiSampleList.add(sampleModel4);
         uiSampleList.add(sampleModel5);
         uiSampleList.add(sampleModel6);
-//        uiSampleList.add(sampleModel7);
-
+        uiSampleList.add(sampleModel7);
+        uiSampleList.add(sampleModel8);
 
         sampleListAdapter = new SampleListAdapter(uiSampleList, mContext);
         uiListView.setAdapter(sampleListAdapter);
@@ -157,6 +165,16 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
                         intent.setClass(mContext, WeexActivity.class);
                         startActivity(intent);
                         break;
+
+
+                    case 6:
+                        intent.setClass(mContext, VoiceRecordActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case 7:
+                        didStartCaptureVideo();
+                        break;
                     default:
                         break;
 
@@ -179,6 +197,30 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
     }
 
 
+    @AfterPermissionGranted(REQUEST_Camera_CAPTUREVIDEO)
+    public void didStartCaptureVideo() {
+
+
+        if (EasyPermissions.hasPermissions(mContext, Manifest.permission.CAMERA)) {
+
+
+            String videoFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + AbStrUtil.get36UUID()
+                    + ".mp4";
+            File videoFile = new File(videoFilePath);
+
+            // 启动视频录制
+            CaptureVideoActivity.start((Activity) mContext, videoFilePath, 1000);
+
+        } else {
+            // Ask for one permission
+
+
+            EasyPermissions.requestPermissions(this, "需要使用相机信息权限",
+                    REQUEST_Camera_CAPTUREVIDEO, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO);
+        }
+    }
+
+
     @AfterPermissionGranted(REQUEST_QRCamera_PERM)
     public void didQrStartCapture() {
 
@@ -192,7 +234,7 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
             // Ask for one permission
 
 
-            EasyPermissions.requestPermissions(this, "需要使用位置信息权限",
+            EasyPermissions.requestPermissions(this, "需要使用相机信息权限",
                     REQUEST_QRCamera_PERM, Manifest.permission.CAMERA);
         }
     }
@@ -211,7 +253,7 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
             // Ask for one permission
 
 
-            EasyPermissions.requestPermissions(this, "需要使用位置信息权限",
+            EasyPermissions.requestPermissions(this, "需要使用相机信息权限",
                     REQUEST_Camera_PERM, Manifest.permission.CAMERA);
         }
     }
@@ -219,6 +261,14 @@ public class OtherUtilsFragment extends AbBaseFragment implements EasyPermission
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
 
+        if (requestCode == REQUEST_Camera_PERM) {
+            didStartCapture();
+        } else if (requestCode == REQUEST_QRCamera_PERM) {
+            didQrStartCapture();
+        } else if (requestCode == REQUEST_Camera_CAPTUREVIDEO) {
+            didStartCaptureVideo();
+
+        }
 
     }
 

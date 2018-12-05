@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.os.StatFs;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 
 
 import com.ningcui.mylibrary.app.AbAppConfig;
@@ -1070,8 +1071,36 @@ public class AbFileUtil {
 	   }
        return true;
     }
-    
-    
+
+	/**
+	 * 删除指定路径文件
+	 *
+	 * @param path
+	 */
+	public static boolean delete(String path) {
+		if (TextUtils.isEmpty(path)) {
+			return false;
+		}
+		File f = new File(path);
+		if (f.exists()) {
+			f = renameOnDelete(f);
+			return f.delete();
+		} else {
+			return false;
+		}
+	}
+
+
+	// rename before delete to avoid lingering filesystem lock of android
+	private static File renameOnDelete(File file) {
+		String tmpPath = file.getParent() + "/" + System.currentTimeMillis() + "_tmp";
+		File tmpFile = new File(tmpPath);
+		if (file.renameTo(tmpFile)) {
+			return tmpFile;
+		} else {
+			return file;
+		}
+	}
     /**
      * 描述：读取Assets目录的文件内容.
      *

@@ -219,6 +219,20 @@
         <activity android:name=".someOther.imagePicker.activity.ImageVideoPickActivity"></activity>
 
         <activity android:name=".someOther.weex.activity.WeexActivity"></activity>
+
+
+        <!-- 拍摄视频 -->
+        <activity
+            android:name=".someOther.captureVideo.CaptureVideoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!--音频录制及播放-->
+        <activity
+            android:name=".someOther.voiceRecord.activity.VoiceRecordActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

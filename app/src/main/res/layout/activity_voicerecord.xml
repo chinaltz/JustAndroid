@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_navbar" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.litingzhe.justandroid.someOther.voiceRecord.widget.EaseVoiceRecorderView
+
+
+            android:id="@+id/voice_recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <LinearLayout
+
+            android:id="@+id/chatFooterLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5px"
+                android:paddingTop="5px">
+
+                <ImageButton
+                    android:id="@+id/voiceBtn"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_marginLeft="20px"
+                    android:background="@drawable/button_selector_chat_voice"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20px"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:paddingBottom="5px"
+                android:paddingTop="5px">
+
+                <EditText
+                    android:id="@+id/tv_send_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70px"
+                    android:background="@drawable/button_white_maincolor_stroke"
+                    android:minHeight="50px"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:textSize="30px" />
+
+                <Button
+                    android:id="@+id/voiceSendBtn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70px"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_selector_white"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="按住说话"
+                    android:textColor="@color/gray"
+                    android:textSize="30px"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="20px"
+                android:orientation="horizontal"
+                android:paddingBottom="5px"
+                android:paddingTop="5px">
+
+                <Button
+                    android:id="@+id/sendBtn"
+                    android:layout_width="120px"
+                    android:layout_height="70px"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20px"
+                    android:background="@drawable/button_selector_green"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="发送"
+                    android:textColor="@color/white"
+                    android:textSize="30px"
+
+                    android:visibility="gone"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/addBtn"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_marginLeft="20px"
+                    android:background="@drawable/button_selector_chat_add"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

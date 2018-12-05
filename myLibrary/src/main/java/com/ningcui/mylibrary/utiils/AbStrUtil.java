@@ -41,6 +41,19 @@ import java.util.regex.Pattern;
 public class AbStrUtil {
     ///获取32位订单号年月日时分秒+18位随机字符串
 
+    /**
+     * 生成唯一号
+     *
+     * @return
+     */
+    public static String get36UUID() {
+        UUID uuid = UUID.randomUUID();
+        String uniqueId = uuid.toString();
+        return uniqueId;
+    }
+
+
+
     public static String getTradeNo() {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss",
